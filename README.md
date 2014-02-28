@@ -28,7 +28,7 @@ NCIWorldCupApp
 
 --------------------------
 ###Marking Scheme and Deliverables
-####Deliverable 1 - Week 4 
+####Deliverable 1 - Week 4 - 23 Feb
 *(Project Proposal & Class Diagram)*   
  
 * One submission per group
@@ -44,7 +44,7 @@ contained within each class.
 
 
 --------------------------
-####Deliverable 2 - Week 7
+####Deliverable 2 - Week 7 - 16 Mar
 *(User Interface)*
 
 * One submission per group
@@ -58,7 +58,7 @@ contained within each class.
 * All necessary navigation should be included and fully functional at this point.
 
 --------------------------
-####Deliverable 3 - Week 10
+####Deliverable 3 - Week 10 - 6 Apr
 *(Prototype of Individual Theme)*
 
 * One submission per group
@@ -72,7 +72,7 @@ module concepts with the exception of File I/O with objects and polym
 added for the group submission in week 12  
 
 --------------------------
-####Deliverable 4- Week 12
+####Deliverable 4- Week 12 - 20 Apr
 *(Full Prototype with File Storage)*
 
 * One submission per group
