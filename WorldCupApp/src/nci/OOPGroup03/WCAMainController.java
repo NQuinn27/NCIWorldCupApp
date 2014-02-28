@@ -21,6 +21,8 @@ public class WCAMainController {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        WCAMainGUI mainGui = new WCAMainGUI();
+        mainGui.setVisible(true);
     }
     
 }
