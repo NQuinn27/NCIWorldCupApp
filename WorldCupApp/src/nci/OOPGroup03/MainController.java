@@ -14,14 +14,14 @@ package nci.OOPGroup03;
  *
  * @author Niall Quinn
  */
-public class WCAMainController {
+public class MainController {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        WCAMainGUI mainGui = new WCAMainGUI();
+        MainGUI mainGui = new MainGUI();
         mainGui.setVisible(true);
     }
     
