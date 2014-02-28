@@ -11,20 +11,20 @@ NCIWorldCupApp
 
 --------------------------
 ###Project Brief
-* #####You have been tasked with developing a prototype using Java for  an interactive mobile app for The World Cup  
-* #####Working in teams of 4 people you will build a fully functional prototype for your app using Java.
-* #####The representative group of potential users will review the prototypes at the end of the semester.
-* #####The app must consist of 4 distinct sections.
-* #####Each member of the team will take responsibility for the development of one of these sections.
-* #####All sections should then be combined in one complete seamless package.
+* You have been tasked with developing a prototype using Java for  an interactive mobile app for The World Cup  
+* Working in teams of 4 people you will build a fully functional prototype for your app using Java.
+* The representative group of potential users will review the prototypes at the end of the semester.
+* The app must consist of 4 distinct sections.
+* Each member of the team will take responsibility for the development of one of these sections.
+* All sections should then be combined in one complete seamless package.
 * #####In the circumstance where a group has less than 4 members, each member still takes only one section each.
 
 ####Each Section of the Application should contain:
-* #####More than 3 classes
-* #####3 or more distinct functions or features
-* #####Data input and output
-* #####Dynamic interfaces using text and images
-* #####More than 1 form requiring user input
+* More than 3 classes
+* 3 or more distinct functions or features
+* Data input and output
+* Dynamic interfaces using text and images
+* More than 1 form requiring user input
 
 --------------------------
 ###Marking Scheme and Deliverables
