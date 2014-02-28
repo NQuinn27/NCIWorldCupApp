@@ -17,7 +17,7 @@ NCIWorldCupApp
 * The app must consist of 4 distinct sections.
 * Each member of the team will take responsibility for the development of one of these sections.
 * All sections should then be combined in one complete seamless package.
-* #####In the circumstance where a group has less than 4 members, each member still takes only one section each.
+* In the circumstance where a group has less than 4 members, each member still takes only one section each.
 
 ####Each Section of the Application should contain:
 * More than 3 classes
