@@ -1,0 +1,13 @@
+<#if licenseFirst??>
+${licenseFirst}
+</#if>
+${licensePrefix}${project.displayName}
+${licensePrefix}${nameAndExt}
+${licensePrefix}
+${licensePrefix}Created by ${user} on ${date}
+${licensePrefix}This Project is created for NCI Object-Oriented Programming Year 1, Group Assignment.
+${licensePrefix}Copyright (c) Niall Quinn, Jonathan James Turner, James Walsh, John O'Shea. All rights reserved.
+${licensePrefix}
+<#if licenseLast??>
+${licenseLast}
+</#if>
