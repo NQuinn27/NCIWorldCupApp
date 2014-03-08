@@ -1,4 +1,4 @@
- Error reading included file Templates/GUIForms/../Licenses/license-OOPGroupLicence.txt
+
 package nci.OOPGroup03;
 
 /**
