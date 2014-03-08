@@ -25,20 +25,21 @@ public class MainController {
         mainGui.setVisible(true);
         mainGui.initPanelsArray();
         
-        /*IMPORTANT
+        /*
+        IMPORTANT
         indexes:
         LIVE - 0
         RESULTS - 1
         */
         liveModule live = new liveModule();
         mainGui.add(live);
-        live.setBounds(0,0,633,397);
+        live.setBounds(0,0,633,419);
         mainGui.panelsArray[0] = live;
         live.setVisible(false);
         
-        __ResultsModule results = new __ResultsModule();
+        ResultsModule results = new ResultsModule();
         mainGui.add(results);
-        results.setBounds(0,0,633,397);
+        results.setBounds(0,0,633,419);
         mainGui.panelsArray[1] = results;
         results.setVisible(false);
     }
