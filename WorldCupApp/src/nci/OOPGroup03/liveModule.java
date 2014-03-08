@@ -31,21 +31,108 @@ public class liveModule extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setBackground(new java.awt.Color(255, 102, 102));
+        jPanel1 = new javax.swing.JPanel();
+        teamOneScore4 = new javax.swing.JLabel();
+        teamTwoScore = new javax.swing.JLabel();
+        teamOneScore2 = new javax.swing.JLabel();
+        teamOneScore3 = new javax.swing.JLabel();
+        teamOneScore1 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+
+        setBackground(new java.awt.Color(255, 255, 255));
+
+        teamOneScore4.setFont(new java.awt.Font("Lucida Grande", 0, 56)); // NOI18N
+        teamOneScore4.setText("Team2");
+
+        teamTwoScore.setFont(new java.awt.Font("Lucida Grande", 0, 72)); // NOI18N
+        teamTwoScore.setText("0");
+
+        teamOneScore2.setFont(new java.awt.Font("Lucida Grande", 0, 72)); // NOI18N
+        teamOneScore2.setText(":");
+        teamOneScore2.addContainerListener(new java.awt.event.ContainerAdapter() {
+            public void componentAdded(java.awt.event.ContainerEvent evt) {
+                teamOneScore2ComponentAdded(evt);
+            }
+        });
+
+        teamOneScore3.setFont(new java.awt.Font("Lucida Grande", 0, 72)); // NOI18N
+        teamOneScore3.setText("0");
+
+        teamOneScore1.setFont(new java.awt.Font("Lucida Grande", 0, 56)); // NOI18N
+        teamOneScore1.setText("Team1");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(teamOneScore1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(teamOneScore3)
+                .addGap(18, 18, 18)
+                .addComponent(teamOneScore2)
+                .addGap(18, 18, 18)
+                .addComponent(teamTwoScore)
+                .addGap(34, 34, 34)
+                .addComponent(teamOneScore4)
+                .addGap(38, 38, 38))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(teamOneScore1)
+                    .addComponent(teamOneScore3)
+                    .addComponent(teamTwoScore)
+                    .addComponent(teamOneScore4)
+                    .addComponent(teamOneScore2))
+                .addGap(0, 14, Short.MAX_VALUE))
+        );
+
+        jPanel2.setBackground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 638, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 217, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 634, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 463, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(51, 51, 51)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(46, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void teamOneScore2ComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_teamOneScore2ComponentAdded
+        // TODO add your handling code here:
+    }//GEN-LAST:event_teamOneScore2ComponentAdded
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel teamOneScore1;
+    private javax.swing.JLabel teamOneScore2;
+    private javax.swing.JLabel teamOneScore3;
+    private javax.swing.JLabel teamOneScore4;
+    private javax.swing.JLabel teamTwoScore;
     // End of variables declaration//GEN-END:variables
 }
