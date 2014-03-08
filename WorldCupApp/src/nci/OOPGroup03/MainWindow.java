@@ -65,6 +65,11 @@ public class MainWindow extends javax.swing.JFrame {
         });
 
         jToggleButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nci/OOPGroup03/resources/glyphicons_074_cup.png"))); // NOI18N
+        jToggleButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton3ActionPerformed(evt);
+            }
+        });
 
         jToggleButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nci/OOPGroup03/resources/glyphicons_032_wifi_alt.png"))); // NOI18N
         jToggleButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -183,6 +188,7 @@ public class MainWindow extends javax.swing.JFrame {
         panelsArray = new javax.swing.JPanel[4];
     }
     
+        
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jToggleButton1ActionPerformed
@@ -193,9 +199,21 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void jToggleButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton4ActionPerformed
         // TODO add your handling code here:
+        for (int i = 0 ; i < 2 ; i ++) {
+            panelsArray[i].setVisible(false);
+        }
         panelsArray[0].setVisible(true);
         jPanel2.setVisible(false);
     }//GEN-LAST:event_jToggleButton4ActionPerformed
+
+    private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed
+        // TODO add your handling code here:
+        for (int i = 0 ; i < 2 ; i ++) {
+            panelsArray[i].setVisible(false);
+        }
+        panelsArray[1].setVisible(true);
+        jPanel2.setVisible(false);
+    }//GEN-LAST:event_jToggleButton3ActionPerformed
 
     /**
      * @param args the command line arguments
