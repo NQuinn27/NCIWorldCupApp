@@ -21,8 +21,19 @@ public class MainController {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        MainGUI mainGui = new MainGUI();
+        MainWindow mainGui = new MainWindow();
         mainGui.setVisible(true);
+        mainGui.initPanelsArray();
+        
+        /*IMPORTANT
+        indexes:
+        LIVE - 0
+        */
+        liveModule live = new liveModule();
+        mainGui.add(live);
+        live.setBounds(0,0,633,397);
+        mainGui.panelsArray[0] = live;
+        live.setVisible(false);
     }
     
 }
