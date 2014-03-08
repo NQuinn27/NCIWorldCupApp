@@ -36,7 +36,7 @@ public class MainController {
         mainGui.panelsArray[0] = live;
         live.setVisible(false);
         
-        ResultsModule results = new ResultsModule();
+        __ResultsModule results = new __ResultsModule();
         mainGui.add(results);
         results.setBounds(0,0,633,397);
         mainGui.panelsArray[1] = results;
