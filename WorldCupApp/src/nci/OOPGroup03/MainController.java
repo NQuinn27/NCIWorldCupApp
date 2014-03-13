@@ -42,6 +42,12 @@ public class MainController {
         results.setBounds(0,0,632,432);
         mainGui.panelsArray[1] = results;
         results.setVisible(false);
+        
+        FixturesModule fixtures = new FixturesModule();
+        mainGui.add(fixtures);
+        fixtures.setBounds(0,0,632,432);
+        mainGui.panelsArray[2] = fixtures;
+        fixtures.setVisible(false);
     }
     
 }

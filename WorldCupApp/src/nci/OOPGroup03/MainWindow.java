@@ -175,11 +175,16 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        for (int i = 0 ; i < 3 ; i ++) {
+            panelsArray[i].setVisible(false);
+        }
+        panelsArray[2].setVisible(true);
+        jPanel2.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
          
-        for (int i = 0 ; i < 2 ; i ++) {
+        for (int i = 0 ; i < 3 ; i ++) {
             panelsArray[i].setVisible(false);
         }
         panelsArray[1].setVisible(true);
@@ -188,7 +193,7 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-        for (int i = 0 ; i < 2 ; i ++) {
+        for (int i = 0 ; i < 3 ; i ++) {
             panelsArray[i].setVisible(false);
         }
         
