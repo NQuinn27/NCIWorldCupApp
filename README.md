@@ -6,8 +6,8 @@ NCIWorldCupApp
 #####Contributors:  
 * **Niall Quinn** - @NQuinn27  
 * **Jonathan James Turner** - @
-* **James Walsh** - @
-* **John O'Shea** - @
+* **James Walsh** - @itsjt
+* **John O'Shea** - @colmiscool
 
 --------------------------
 ###Project Brief
