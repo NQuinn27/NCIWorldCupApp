@@ -48,6 +48,12 @@ public class MainController {
         fixtures.setBounds(0,0,632,432);
         mainGui.panelsArray[2] = fixtures;
         fixtures.setVisible(false);
+        
+        TeamsModule teams = new TeamsModule();
+        mainGui.add(teams);
+        teams.setBounds(0,0,632,432);
+        mainGui.panelsArray[3] = teams;
+        teams.setVisible(false);
     }
     
 }

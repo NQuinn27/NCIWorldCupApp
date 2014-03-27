@@ -4,6 +4,8 @@
  */
 package nci.OOPGroup03;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author johnoshea
@@ -88,6 +90,7 @@ public class ResultsModule extends javax.swing.JPanel {
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null, "This module will display results of the played matches for all groups. The main panel will display a drop down menu to allow the user select a group. The groups will be displayed as text areas one at a time as they are selected in the drop down menu");
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

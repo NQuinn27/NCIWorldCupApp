@@ -171,47 +171,44 @@ public class MainWindow extends javax.swing.JFrame {
         
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        setAllVisibilityToFalse();
+        panelsArray[3].setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-        for (int i = 0 ; i < 3 ; i ++) {
-            panelsArray[i].setVisible(false);
-        }
-        panelsArray[2].setVisible(true);
-        jPanel2.setVisible(false);
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-         
-        for (int i = 0 ; i < 3 ; i ++) {
-            panelsArray[i].setVisible(false);
-        }
-        panelsArray[1].setVisible(true);
-        jPanel2.setVisible(false);
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-        for (int i = 0 ; i < 3 ; i ++) {
-            panelsArray[i].setVisible(false);
-        }
-        
-        panelsArray[0].setVisible(true);
-        JButton button = (JButton)evt.getSource();
-
-        System.out.println(button.getText());
-        jPanel2.setVisible(false);
-    }//GEN-LAST:event_jButton4ActionPerformed
-
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-        int count = panelsArray.length;
+    private void setAllVisibilityToFalse() {
+       int count = panelsArray.length;
         for (int i = 0 ; i < count ; i++) {
             if (panelsArray[i] != null){
                 panelsArray[i].setVisible(false);
             }
         }
+        jPanel2.setVisible(false);
+    }
+    
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        setAllVisibilityToFalse();
+        panelsArray[2].setVisible(true);
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+         
+        setAllVisibilityToFalse();
+        panelsArray[1].setVisible(true);
+        
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        setAllVisibilityToFalse();
+        panelsArray[0].setVisible(true);
+        
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        setAllVisibilityToFalse();
         jPanel2.setVisible(true);
     }//GEN-LAST:event_jButton5ActionPerformed
 
