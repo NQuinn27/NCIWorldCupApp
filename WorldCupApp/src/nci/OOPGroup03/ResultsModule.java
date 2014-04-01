@@ -1,6 +1,31 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * This module will display the results of played matches for the FIFA world cup 2014
+ * It will be controlled by a varible called select which the user sets using the jComboBox.
+ * This will toggle the visability of 8 jPanels (one for each group) so the respective panel is visable
+ * @johnoshea x13104977
+ * 
+ * PROGRESS LOG:
+ * 
+ * Commit 1: Basic layout was established. The main Panels dimensions were agreed upon by the group. 
+ *           I'm going to controll the module with a single jComboBox.
+ *           The content will be displayed in seperate jPanels. I haven't decided how I'll display info inside the panels yet (ie. labels, text areas etc...).
+ * 
+ * Commit 2: Didn't actually get any coding done, I just planned out my next commit on paper and read into using the jComboBox.
+ *           Fixed a problem in regards to importing the swing layout library.
+ * 
+ * Commit 3: Added a button and coded the event handeler. (See line 114). On click, this button takes the selected value from the jComboBox.
+ *           This value is then stored in the variable String select. The event handler also exicutes a switch statement (written using else if for now) (see line 135).
+ *           This statement will toggle the respective panel to visable and the other 7 to invisable.
+ * 
+ * Commit 4: TODO: 1. Design the panels to display the results. 
+ *                 2. Create a class to toggle all those panels to visable=false; (Might just borrow the one from MainController.
+ *                 3. Finish coding the switch statement to controll the visability of the panels.
+ *                 4. Set the background image (agree on this with group).
+ *                 5. Set the fonts (agree on this with group).
+ * 
+ * Commit 5: TODO: 1. Bug testing and troubleshooting.
+ *                 2. Any last font or design changes (agree w/ group).
+ *                 3. Bug test entire project (do this as a group).
  */
 package nci.OOPGroup03;
 
@@ -12,9 +37,8 @@ import javax.swing.JOptionPane;
  */
 public class ResultsModule extends javax.swing.JPanel {
 
-    /**
-     * Creates new form ResultsModule
-     */
+    //Creates new form ResultsModule
+     
     public ResultsModule() {
         initComponents();
     }
@@ -97,15 +121,26 @@ public class ResultsModule extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        // TODO add your handling code here:
-        //JOptionPane.showMessageDialog(null, "This module will display results of the played matches for all groups. The main panel will display a drop down menu to allow the user select a group. The groups will be displayed as text areas one at a time as they are selected in the drop down menu");
+        // I don't want this action to do anything, the event will be called when the user clicks the button (line103).
+        // This just assigns the variable 'String select' which will controll the if, if else, else statements (line 108) 
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        jTextField1.setText("Results for Group " + jComboBox1.getSelectedItem().toString());
+        //Line 129 (commeneted out) is just for testing (breakpoint 1)
+        // jTextField1.setText("Results for Group " + jComboBox1.getSelectedItem().toString());
+       String select = (String) jComboBox1.getSelectedItem();
+       //NOTE! This will be changed to a 'switch' statement once I am happy everything else in the module is working as intended
+       // This selection will toggle the visability of the respective JTextArea to visable = true and toggle the other 5 text areas to visable = false    
+
+       if (select == "A") {System.out.println("Test A successful");}
+       else if (select == "B") {System.out.println("Test B successful");}
+       else if (select == "C") {System.out.println("Test C successful");}
+       else if (select == "D") {System.out.println("Test D successful");}
+       else if (select == "E") {System.out.println("Test E successful");}
+       else if (select == "F") {System.out.println("Test F successful");}
+       else if (select == "G") {System.out.println("Test G successful");}
+       else {System.out.println("Oops! Something went wrong in ResultsModule (breakpoint 2)");}
     }//GEN-LAST:event_jButton1ActionPerformed
-// This module will be contorolled by the JComboBox. The user will select the group (from A-G).
-// This selection will toggle the visability of the respective JTextArea to visable = true and toggle the other 5 text areas to visable = false    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JComboBox jComboBox1;
