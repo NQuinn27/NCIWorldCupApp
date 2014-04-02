@@ -17,11 +17,16 @@
  *           This value is then stored in the variable String select. The event handler also exicutes a switch statement (written using else if for now) (see line 135).
  *           This statement will toggle the respective panel to visable and the other 7 to invisable.
  * 
+ * Commit 4: I decided to remove the Button as Niall suggested I could controll the toggeling entirely from the jComboBox
+ *           I created a jPanel to display results for Group A. I designed it using jLables, there is probably a better way to do it.
+ *           I'll look into better ways to design the panel, this is just a prototype.
+ *           I created the methood Hide() to .setVisible(false) for all panels.
+ *           I Added in the code to invoke hide on all the jComboBox options, an the code to show group A when A is selected.         
+ * 
  * Commit 4: TODO: 1. Design the panels to display the results. 
- *                 2. Create a class to toggle all those panels to visable=false; (Might just borrow the one from MainController.
- *                 3. Finish coding the switch statement to controll the visability of the panels.
- *                 4. Set the background image (agree on this with group).
- *                 5. Set the fonts (agree on this with group).
+ *                 2. Finish coding the switch statement to controll the visability of the panels.
+ *                 3. Set the background image (agree on this with group).
+ *                 4. Set the fonts (agree on this with group).
  * 
  * Commit 5: TODO: 1. Bug testing and troubleshooting.
  *                 2. Any last font or design changes (agree w/ group).
@@ -30,6 +35,7 @@
 package nci.OOPGroup03;
 
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 /**
  *
@@ -42,7 +48,18 @@ public class ResultsModule extends javax.swing.JPanel {
     public ResultsModule() {
         initComponents();
     }
+    
+    public void Hide() {
+        aPanel.setVisible(false);
+       /* bPanel.setVisible(false);
+        cPanel.setVisible(false);
+        dPanel.setVisible(false);
+        ePanel.setVisible(false);
+        fPanel.setVisible(false);
+        gPanel.setVisible(false);
+        hPanel.setVisible(false);*/
 
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -55,8 +72,18 @@ public class ResultsModule extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox();
-        jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        aPanel = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 0));
 
@@ -74,14 +101,82 @@ public class ResultsModule extends javax.swing.JPanel {
             }
         });
 
-        jTextField1.setText("jTextField1");
+        jLabel3.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        jLabel3.setText("Group A");
 
-        jButton1.setText("Go!");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
+        jLabel4.setText("Team");
+
+        jLabel5.setText("Lost");
+
+        jLabel6.setText("Won");
+
+        jLabel7.setText("Played");
+
+        jLabel8.setText("Tied");
+
+        jLabel9.setText("Points");
+
+        jLabel10.setText("Croatia");
+
+        jLabel11.setText("Brazil");
+
+        jLabel12.setText("Cameroon");
+
+        jLabel13.setText("Mexico");
+
+        org.jdesktop.layout.GroupLayout aPanelLayout = new org.jdesktop.layout.GroupLayout(aPanel);
+        aPanel.setLayout(aPanelLayout);
+        aPanelLayout.setHorizontalGroup(
+            aPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(aPanelLayout.createSequentialGroup()
+                .add(aPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(aPanelLayout.createSequentialGroup()
+                        .add(53, 53, 53)
+                        .add(aPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(aPanelLayout.createSequentialGroup()
+                                .add(jLabel4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 45, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                .add(63, 63, 63)
+                                .add(jLabel7, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 45, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                                .add(jLabel6, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 45, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                                .add(jLabel5, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 45, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                                .add(jLabel8, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 45, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                                .add(jLabel9, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 45, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                            .add(jLabel11, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 45, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(jLabel10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 45, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(jLabel13, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 45, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(jLabel12)))
+                    .add(aPanelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .add(jLabel3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 59, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(81, Short.MAX_VALUE))
+        );
+        aPanelLayout.setVerticalGroup(
+            aPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(aPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .add(jLabel3)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                .add(aPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(jLabel4)
+                    .add(jLabel5)
+                    .add(jLabel7)
+                    .add(jLabel6)
+                    .add(jLabel8)
+                    .add(jLabel9))
+                .add(40, 40, 40)
+                .add(jLabel11)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                .add(jLabel10)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                .add(jLabel13)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                .add(jLabel12)
+                .addContainerGap(24, Short.MAX_VALUE))
+        );
 
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(this);
         this.setLayout(layout);
@@ -96,56 +191,68 @@ public class ResultsModule extends javax.swing.JPanel {
                         .add(201, 201, 201)
                         .add(jLabel2)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                        .add(jComboBox1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(jButton1))
+                        .add(jComboBox1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                     .add(layout.createSequentialGroup()
-                        .add(132, 132, 132)
-                        .add(jTextField1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 408, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(93, Short.MAX_VALUE))
+                        .add(65, 65, 65)
+                        .add(aPanel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(59, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(layout.createSequentialGroup()
-                .add(27, 27, 27)
+                .addContainerGap(27, Short.MAX_VALUE)
                 .add(jLabel1)
                 .add(18, 18, 18)
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(jLabel2)
-                    .add(jComboBox1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jButton1))
-                .add(84, 84, 84)
-                .add(jTextField1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(173, Short.MAX_VALUE))
+                    .add(jComboBox1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .add(29, 29, 29)
+                .add(aPanel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(44, 44, 44))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        // I don't want this action to do anything, the event will be called when the user clicks the button (line103).
-        // This just assigns the variable 'String select' which will controll the if, if else, else statements (line 108) 
-    }//GEN-LAST:event_jComboBox1ActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        //Line 129 (commeneted out) is just for testing (breakpoint 1)
+        //Line 217 (commeneted out) is just for testing (breakpoint 1)
         // jTextField1.setText("Results for Group " + jComboBox1.getSelectedItem().toString());
        String select = (String) jComboBox1.getSelectedItem();
+       
+       
        //NOTE! This will be changed to a 'switch' statement once I am happy everything else in the module is working as intended
        // This selection will toggle the visability of the respective JTextArea to visable = true and toggle the other 5 text areas to visable = false    
-
-       if (select == "A") {System.out.println("Test A successful");}
-       else if (select == "B") {System.out.println("Test B successful");}
-       else if (select == "C") {System.out.println("Test C successful");}
-       else if (select == "D") {System.out.println("Test D successful");}
-       else if (select == "E") {System.out.println("Test E successful");}
-       else if (select == "F") {System.out.println("Test F successful");}
-       else if (select == "G") {System.out.println("Test G successful");}
+       if (select == "A") {System.out.println("Test A successful");
+                           Hide();
+                           aPanel.setVisible(true);}
+       else if (select == "B") {System.out.println("Test B successful");
+                                Hide();}
+       else if (select == "C") {System.out.println("Test C successful");
+                                Hide();}
+       else if (select == "D") {System.out.println("Test D successful");
+                                Hide();}
+       else if (select == "E") {System.out.println("Test E successful");
+                                Hide();}
+       else if (select == "F") {System.out.println("Test F successful");
+                                Hide();}
+       else if (select == "G") {System.out.println("Test G successful");
+                                Hide();}
        else {System.out.println("Oops! Something went wrong in ResultsModule (breakpoint 2)");}
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jComboBox1ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JPanel aPanel;
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     // End of variables declaration//GEN-END:variables
 }
