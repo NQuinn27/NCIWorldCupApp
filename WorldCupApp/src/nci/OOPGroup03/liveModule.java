@@ -235,9 +235,10 @@ public class liveModule extends javax.swing.JPanel {
                 
                 for ( Iterator i2 = element.elementIterator(); i2.hasNext(); ) {
                 Element element2 = (Element) i2.next();
-                
+                    //Node is a game - parse game
                     if ("isLive".equals(element2.getName())) {
-                        if ((String)element2.getData() == "false"){ 
+                        if ("false".equals((String)element2.getData())){ 
+                            //If its not live dont show
                             break;
                         }
                     }
@@ -245,10 +246,10 @@ public class liveModule extends javax.swing.JPanel {
                         //Node is Team 1 - parse info
                         for (Iterator team1Iterator = element2.elementIterator(); team1Iterator.hasNext();) {
                             Element team1 = (Element) team1Iterator.next();
-                            if ((String)team1.getName() == "name") {
+                            if ("name".equals((String)team1.getName())) {
                                 Team1Name.setText((String)team1.getData());
                             }
-                            if ((String)team1.getName() == "score") {
+                            if ("score".equals((String)team1.getName())) {
                                 teamOneScore.setText((String)team1.getData());
                             }
                         }
@@ -257,10 +258,10 @@ public class liveModule extends javax.swing.JPanel {
                         //Node is Team 2 - parse info
                         for (Iterator team2Iterator = element2.elementIterator(); team2Iterator.hasNext();) {
                             Element team2 = (Element) team2Iterator.next();
-                            if ((String)team2.getName() == "name") {
+                            if ("name".equals((String)team2.getName())) {
                                 Team2Name.setText((String)team2.getData());
                             }
-                            if ((String)team2.getName() == "score") {
+                            if ("score".equals((String)team2.getName())) {
                                 teamTwoScore.setText((String)team2.getData());
                             }
                         }

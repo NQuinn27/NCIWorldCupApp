@@ -6,6 +6,8 @@
 
 package nci.OOPGroup03;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Kirsten
@@ -90,8 +92,18 @@ public class TeamsModule extends javax.swing.JPanel {
         });
 
         jToggleButton1.setText("MEXICO");
+        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton1ActionPerformed(evt);
+            }
+        });
 
         jToggleButton2.setText("CAMEROON");
+        jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton2ActionPerformed(evt);
+            }
+        });
 
         jLabel2.setText("GROUP B");
 
@@ -103,18 +115,48 @@ public class TeamsModule extends javax.swing.JPanel {
         });
 
         jToggleButton6.setText("NETHERLANDS");
+        jToggleButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton6ActionPerformed(evt);
+            }
+        });
 
         jToggleButton7.setText("CHILE");
+        jToggleButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton7ActionPerformed(evt);
+            }
+        });
 
         jToggleButton8.setText("AUSTRALIA");
+        jToggleButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton8ActionPerformed(evt);
+            }
+        });
 
         jLabel3.setText("GROUP C");
 
-        jToggleButton10.setText("iVORY COAST");
+        jToggleButton10.setText("IVORY COAST");
+        jToggleButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton10ActionPerformed(evt);
+            }
+        });
 
         jToggleButton11.setText("GREECE");
+        jToggleButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton11ActionPerformed(evt);
+            }
+        });
 
         jToggleButton12.setText("JAPAN");
+        jToggleButton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton12ActionPerformed(evt);
+            }
+        });
 
         jToggleButton13.setText("COLUMBIA");
         jToggleButton13.addActionListener(new java.awt.event.ActionListener() {
@@ -133,10 +175,25 @@ public class TeamsModule extends javax.swing.JPanel {
         });
 
         jToggleButton15.setText("COSTA RICA");
+        jToggleButton15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton15ActionPerformed(evt);
+            }
+        });
 
         jToggleButton16.setText("ENGLAND");
+        jToggleButton16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton16ActionPerformed(evt);
+            }
+        });
 
         jToggleButton17.setText("ITALY");
+        jToggleButton17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton17ActionPerformed(evt);
+            }
+        });
 
         jLabel5.setText("GROUP E");
 
@@ -148,6 +205,11 @@ public class TeamsModule extends javax.swing.JPanel {
         });
 
         jToggleButton19.setText("ECUADOR");
+        jToggleButton19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton19ActionPerformed(evt);
+            }
+        });
 
         jToggleButton20.setText("FRANCE");
 
@@ -289,9 +351,7 @@ public class TeamsModule extends javax.swing.JPanel {
                             .addComponent(jLabel5)
                             .addComponent(jLabel6)
                             .addComponent(jLabel7)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel8)))
+                    .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jToggleButton18)
                     .addComponent(jToggleButton22)
@@ -321,28 +381,77 @@ public class TeamsModule extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed
+        JOptionPane.showMessageDialog(null, "FIFA World Cup Victories 5 (2002, 1994, 1970, 1962, 1958) \n" + "FIFA World Cup appearances 16 \n" + "World Ranking Pos ^ 10 - 1102 pts\n" + "Key Players - Neymar, Robinho, Dani Alves, Julio Cesar");
         // TODO add your handling code here:
     }//GEN-LAST:event_jToggleButton3ActionPerformed
 
     private void jToggleButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton4ActionPerformed
-        // TODO add your handling code here:
+    JOptionPane.showMessageDialog(null, "FIFA World Cup Victories 0 \n" + "FIFA World Cup appearances 3 \n" + "World Ranking Pos ^ 16 - 971 pts\n" + "Key Players - Darijo Srna, Luka Modric, Niko Kranjcar");        // TODO add your handling code here:
     }//GEN-LAST:event_jToggleButton4ActionPerformed
 
     private void jToggleButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton5ActionPerformed
-        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null, "FIFA World Cup Victories 1 (2010) \n" + "FIFA World Cup appearances 13 \n" + "World Ranking Pos ^ 1 - 1507 pts\n" + "Key Players - Xavi, Fernando Torres, Andres Iniesta" );               // TODO add your handling code here:
     }//GEN-LAST:event_jToggleButton5ActionPerformed
 
     private void jToggleButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton13ActionPerformed
-        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null, "FIFA World Cup Victories 0 \n" + "FIFA World Cup appearances 4 \n" + "World Ranking Pos ^ 4 - 1200 pts\n" + "Key Players - Falcao, James Rodriguez, Mario Yepes");        // TODO add your handling code here:
     }//GEN-LAST:event_jToggleButton13ActionPerformed
 
     private void jToggleButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton14ActionPerformed
-        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null, "FIFA World Cup Victories 2 (1950, 1930) \n" + "FIFA World Cup appearances 11 \n" + "World Ranking Pos ^ 6 - 1132 pts\n" + "Key Players - Luis Suarez, Diego Lugano, Edinson Cavani");        // TODO add your handling code here:
     }//GEN-LAST:event_jToggleButton14ActionPerformed
 
     private void jToggleButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton18ActionPerformed
-        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null, "FIFA World Cup Victories 0 \n" + "FIFA World Cup appearances 9 \n" + "World Ranking Pos ^ 8 - 1113 pts\n" + "Key Players - Tranquillo Barnetta, Granit Xhaka, Xherdan Shaqiri");        // TODO add your handling code here:
     }//GEN-LAST:event_jToggleButton18ActionPerformed
+
+    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+        JOptionPane.showMessageDialog(null, "FIFA World Cup Victories 0 \n" + "FIFA World Cup appearances 14 \n" + "World Ranking Pos ^ 20 - 892 pts\n" + "Key Players - Chavier Hernandez, Andres Guardado, Giovanni dos Santos");        // TODO add your handling code here:
+    }//GEN-LAST:event_jToggleButton1ActionPerformed
+
+    private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
+        JOptionPane.showMessageDialog(null, "FIFA World Cup Victories 0 \n" + "FIFA World Cup appearances 6 \n" + "World Ranking Pos ^ 51 - 612 pts\n" + "Key Players - Samuel Eto'o, Nicolas N'Koulou, Alex Song");        // TODO add your handling code here:
+    }//GEN-LAST:event_jToggleButton2ActionPerformed
+
+    private void jToggleButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton6ActionPerformed
+        JOptionPane.showMessageDialog(null, "FIFA World Cup Victories 0 \n" + "FIFA World Cup appearances 9 \n" + "World Ranking Pos ^ 9 - 1106 pts\n" + "Key Players - Robin Van Persie, Rafael Van Der Vaart, Arjen Robben");        // TODO add your handling code here:
+    }//GEN-LAST:event_jToggleButton6ActionPerformed
+
+    private void jToggleButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton7ActionPerformed
+        JOptionPane.showMessageDialog(null, "FIFA World Cup Victories 0 \n" + "FIFA World Cup appearances 8 \n" + "World Ranking Pos ^ 15 - 1014 pts\n" + "Key Players - Alexis Sanchez, Eduardo Vargas, Arturo Vidal");        // TODO add your handling code here:
+    }//GEN-LAST:event_jToggleButton7ActionPerformed
+
+    private void jToggleButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton8ActionPerformed
+        JOptionPane.showMessageDialog(null, "FIFA World Cup Victories 0 \n" + "FIFA World Cup appearances 3 \n" + "World Ranking Pos ^ 59 - 564 pts\n" + "Key Players - Tim Cahill, Lucas Neill, Brett Holman");        // TODO add your handling code here:
+    }//GEN-LAST:event_jToggleButton8ActionPerformed
+
+    private void jToggleButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton11ActionPerformed
+        JOptionPane.showMessageDialog(null, "FIFA World Cup Victories 0 \n" + "FIFA World Cup appearances 2 \n" + "World Ranking Pos ^ 12 - 1055 pts\n" + "Key Players - Giorgas Karagounis, Theofanis Gekas, Gioros Samaras");        // TODO add your handling code here:
+    }//GEN-LAST:event_jToggleButton11ActionPerformed
+
+    private void jToggleButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton10ActionPerformed
+        JOptionPane.showMessageDialog(null, "FIFA World Cup Victories 0 \n" + "FIFA World Cup appearances 2 \n" + "World Ranking Pos ^ 17 - 918 pts\n" + "Key Players - Drogba, Yaya Toure, Salomon Kalou");        // TODO add your handling code here:
+    }//GEN-LAST:event_jToggleButton10ActionPerformed
+
+    private void jToggleButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton12ActionPerformed
+        JOptionPane.showMessageDialog(null, "FIFA World Cup Victories 0 \n" + "FIFA World Cup appearances 4 \n" + "World Ranking Pos ^ 48 - 638 pts\n" + "Key Players - Shinji Kagawa, Shinji Okazaki, Hidetoshi Nakata");        // TODO add your handling code here:
+    }//GEN-LAST:event_jToggleButton12ActionPerformed
+
+    private void jToggleButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton15ActionPerformed
+        JOptionPane.showMessageDialog(null, "FIFA World Cup Victories 0 \n" + "FIFA World Cup appearances 3 \n" + "World Ranking Pos ^ 31 - 738 pts\n" + "Key Players - Brian Ruiz, Christian Bolanos, Keilor Navas");        // TODO add your handling code here:
+    }//GEN-LAST:event_jToggleButton15ActionPerformed
+
+    private void jToggleButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton16ActionPerformed
+        JOptionPane.showMessageDialog(null, "FIFA World Cup Victories 1 (1966) \n" + "FIFA World Cup appearances 13 \n" + "World Ranking Pos ^ 13 - 1041 pts\n" + "Key Players - Wayne Rooney, Frank Lampard, Daniel Sturridge");        // TODO add your handling code here:
+    }//GEN-LAST:event_jToggleButton16ActionPerformed
+
+    private void jToggleButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton17ActionPerformed
+        JOptionPane.showMessageDialog(null, "FIFA World Cup Victories 4(2006, 1982, 1938, 1934) \n" + "FIFA World Cup appearances 17 \n" + "World Ranking Pos ^ 7 - 1120 pts\n" + "Key Players - Andrea Pirlo, Gianluigi Buffon, Mario Balotelli");        // TODO add your handling code here:
+    }//GEN-LAST:event_jToggleButton17ActionPerformed
+
+    private void jToggleButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton19ActionPerformed
+        JOptionPane.showMessageDialog(null, "FIFA World Cup Victories 0 \n" + "FIFA World Cup appearances 2 \n" + "World Ranking Pos ^ 23 - 852 pts\n" + "Key Players - Antonio Valencia, Edison Mendez, Felipe Caicdo");        // TODO add your handling code here:
+    }//GEN-LAST:event_jToggleButton19ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
