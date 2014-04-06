@@ -66,30 +66,34 @@ public class FixturesModule extends javax.swing.JPanel {
         jLabel3.setText("Choose Team");
 
         groupSelector.setModel(new javax.swing.DefaultComboBoxModel(new String[] {"Group A", "Group B", "Group C", "Group D", "Group E", "Group F", "Group G", "Group H"  }));
+        groupSelector.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                groupSelectorActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(82, 82, 82)
-                .addComponent(jLabel1)
-                .addGap(55, 55, 55)
-                .addComponent(groupSelector, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(82, 82, 82)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(54, 54, 54))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(textArea1, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(138, 138, 138))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(274, 274, 274))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(groupSelector, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(78, 78, 78)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addGap(18, 18, 18)
+                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(75, 75, 75)
+                        .addComponent(textArea1, javax.swing.GroupLayout.PREFERRED_SIZE, 449, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(109, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -109,39 +113,40 @@ public class FixturesModule extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        
-        String text = textArea1.getSelectedText();
-             String box = (String)text;
+        System.out.println("jcb1 action");
+        Object item = jComboBox1.getSelectedItem();
+        String box = (String)item;
+        System.out.println(box);
              //GROUP A
              
              if ("Brazil v Croatia".equals(box)){
         
-                 textArea1.append("12 June 2014, Arena de Sao Paulo, Sao Paulo, 21:00 (ITV)");
+                 textArea1.setText("12 June 2014, Arena de Sao Paulo, Sao Paulo, 21:00 (ITV)");
         
                  }
              if ("Mexico v Cameroon".equals(box)){
         
-                 textArea1.append("13 June 2014, Arena das Dunas, Natal, 17:00 (ITV)");
+                 textArea1.setText("13 June 2014, Arena das Dunas, Natal, 17:00 (ITV)");
         
                  }
               if ("Brazil v Mexico".equals(box)){
         
-                 textArea1.append("17 June 2014, Estadio Castelao, Fortaleza, 20:00 (BBC)");
+                 textArea1.setText("17 June 2014, Estadio Castelao, Fortaleza, 20:00 (BBC)");
         
                  }
                if ("Cameroon v Croatia".equals(box)){
         
-                 textArea1.append("18 June 2014, Arena Amazonia, Manaus, 23:00 (ITV)");
+                 textArea1.setText("18 June 2014, Arena Amazonia, Manaus, 23:00 (ITV)");
         
                  }
               if ("Cameroon v Brazil".equals(box)){
         
-                 textArea1.append("23 June 2014, Estadio Nacional, Brasilia, 21:00 (ITV)");
+                 textArea1.setText("23 June 2014, Estadio Nacional, Brasilia, 21:00 (ITV)");
         
                  }
                if ("Croatia v Mexico".equals(box)){
         
-                 textArea1.append("23 June 2014, Arena Pernambuco, Recife, 21:00 (ITV)");
+                 textArea1.setText("23 June 2014, Arena Pernambuco, Recife, 21:00 (ITV)");
         
                  }
              //GROUP B
@@ -149,32 +154,32 @@ public class FixturesModule extends javax.swing.JPanel {
                
              if ("Spain v Netherlands".equals(box)){
         
-                 textArea1.append("13 June 2014, Arena Fonte Nova, Salvador, 20:00 (BBC)");
+                 textArea1.setText("13 June 2014, Arena Fonte Nova, Salvador, 20:00 (BBC)");
         
                  }
              if ("Chile v Australia".equals(box)){
         
-                 textArea1.append("13 June 2014, Arena Pantanal, Cuiaba, 23:00 (ITV)");
+                 textArea1.setText("13 June 2014, Arena Pantanal, Cuiaba, 23:00 (ITV)");
         
                  }
              if ("Spain v Chile".equals(box)){
         
-                 textArea1.append("18 June 2014, Estadio do Maracana, Rio de Janeiro, 20:00 (BBC)");
+                 textArea1.setText("18 June 2014, Estadio do Maracana, Rio de Janeiro, 20:00 (BBC)");
         
                  }
              if ("Australia v Netherlands".equals(box)){
         
-                 textArea1.append("18 June 2014, Arena da Baixada, Curitiba, 17:00 (ITV)");
+                 textArea1.setText("18 June 2014, Arena da Baixada, Curitiba, 17:00 (ITV)");
         
                  }
               if ("Australia v Spain".equals(box)){
         
-                 textArea1.append("23 June 2014, Estadio do Maracana, Rio de Janeiro, 20:00 (BBC)");
+                 textArea1.setText("23 June 2014, Estadio do Maracana, Rio de Janeiro, 20:00 (BBC)");
         
                  }
               if ("Netherlands v Chile".equals(box)){
         
-                 textArea1.append("23 June 2014, Arena de Sao Paulo, Sao Paulo, 17:00 (ITV)");
+                 textArea1.setText("23 June 2014, Arena de Sao Paulo, Sao Paulo, 17:00 (ITV)");
         
                  }
               //GROUP C
@@ -182,63 +187,63 @@ public class FixturesModule extends javax.swing.JPanel {
               
              if ("Colombia v Greece".equals(box)){
         
-                 textArea1.append("14 June 2014, Estadio Mineirao, Belo Horizonte, 17:00 (BBC)");
+                 textArea1.setText("14 June 2014, Estadio Mineirao, Belo Horizonte, 17:00 (BBC)");
         
                  }
              if ("Ivory Coast v Japan".equals(box)){
         
-                 textArea1.append("15 June 2014, Arena Pernambuco, Recife, 02:00 (ITV)");
+                 textArea1.setText("15 June 2014, Arena Pernambuco, Recife, 02:00 (ITV)");
         
                  }
              if ("Colombia v Ivory Coast".equals(box)){
         
-                 textArea1.append("19 June 2014, Estadio Nacional, Brasilia, 17:00 (BBC)");
+                 textArea1.setText("19 June 2014, Estadio Nacional, Brasilia, 17:00 (BBC)");
         
                  }
              if ("Japan v Greece".equals(box)){
         
-                 textArea1.append("19 June 2014, Arena das Dunas, Natal, 23:00 (BBC)");
+                 textArea1.setText("19 June 2014, Arena das Dunas, Natal, 23:00 (BBC)");
         
                  }
              if ("Japan v Colombia".equals(box)){
         
-                 textArea1.append("24 June 2014, Arena Pantanal, Cuiaba, 21:00 (BBC)");
+                 textArea1.setText("24 June 2014, Arena Pantanal, Cuiaba, 21:00 (BBC)");
         
                  }
              if ("Greece v Ivory Coast".equals(box)){
         
-                 textArea1.append("24 June 2014, Estadio Castelao, Fortaleza, 21:00 (BBC)");
+                 textArea1.setText("24 June 2014, Estadio Castelao, Fortaleza, 21:00 (BBC)");
         
                  }
              //GROUP D
              if ("Uruguay v Costa Rica".equals(box)){
         
-                 textArea1.append("14 June 2014, Estadio Castelao, Fortaleza, 20:00 (ITV");
+                 textArea1.setText("14 June 2014, Estadio Castelao, Fortaleza, 20:00 (ITV");
         
                  }
              if ("England v Italy".equals(box)){
         
-                 textArea1.append("14 June 2014, Arena Amazonia, Manaus, 23:00 (BBC)");
+                 textArea1.setText("14 June 2014, Arena Amazonia, Manaus, 23:00 (BBC)");
         
                  }
              if ("Uruguay v England".equals(box)){
         
-                 textArea1.append("19 June 2014, Arena de Sao Paulo, Sao Paulo, 20:00 (ITV)");
+                 textArea1.setText("19 June 2014, Arena de Sao Paulo, Sao Paulo, 20:00 (ITV)");
         
                  }
              if ("Italy v Costa Rica".equals(box)){
         
-                 textArea1.append("20 June 2014, Arena Pernambuco, Recife, 17:00 (BBC)");
+                 textArea1.setText("20 June 2014, Arena Pernambuco, Recife, 17:00 (BBC)");
         
                  }
              if ("Italy v Uruguay".equals(box)){
         
-                 textArea1.append("24 June 2014, Arena das Dunas, Natal, 17:00 (ITV)");
+                 textArea1.setText("24 June 2014, Arena das Dunas, Natal, 17:00 (ITV)");
         
                  }
              if ("Costa Rica v England".equals(box)){
         
-                 textArea1.append("24 June 2014, Estadio Mineirao, Belo Horizonte, 17:00 (ITV)");
+                 textArea1.setText("24 June 2014, Estadio Mineirao, Belo Horizonte, 17:00 (ITV)");
         
                  }
              
@@ -246,95 +251,95 @@ public class FixturesModule extends javax.swing.JPanel {
              
              if ("Switzerland v Ecuador".equals(box)){
         
-                 textArea1.append("15 June 2014, Estadio Nacional, Brasilia, 17:00 (ITV)");
+                 textArea1.setText("15 June 2014, Estadio Nacional, Brasilia, 17:00 (ITV)");
         
                  }
              if ("France v Honduras".equals(box)){
         
-                 textArea1.append("15 June 2014, Estadio Beira-Rio, Porto Alegre, 20:00 (BBC)");
+                 textArea1.setText("15 June 2014, Estadio Beira-Rio, Porto Alegre, 20:00 (BBC)");
         
                  }
              if ("Switzerland v France".equals(box)){
         
-                 textArea1.append("20 June 2014, Arena Fonte Nova, Salvador, 20:00 (ITV)");
+                 textArea1.setText("20 June 2014, Arena Fonte Nova, Salvador, 20:00 (ITV)");
         
                  }
              if ("Honduras v Ecuador".equals(box)){
         
-                 textArea1.append("20 June 2014, Arena da Baixada, Curitiba, 23:00 (ITV)");
+                 textArea1.setText("20 June 2014, Arena da Baixada, Curitiba, 23:00 (ITV)");
         
                  }
              if ("Honduras v Switzerland".equals(box)){
         
-                 textArea1.append("25 June 2014, Arena Amazonia, Manaus, 21:00 (BBC)");
+                 textArea1.setText("25 June 2014, Arena Amazonia, Manaus, 21:00 (BBC)");
         
                  }
              if ("Ecuador v France".equals(box)){
         
-                 textArea1.append("25 June 2014, Estadio do Maracana, Rio de Janeiro, 21:00 (BBC)");
+                 textArea1.setText("25 June 2014, Estadio do Maracana, Rio de Janeiro, 21:00 (BBC)");
         
                  }
              
              //GROUP F
               if ("Argentina v Bosnia-Hercegovina".equals(box)){
         
-                 textArea1.append("15 June 2014, Estadio do Maracana, Rio de Janeiro, 23:00 (BBC)");
+                 textArea1.setText("15 June 2014, Estadio do Maracana, Rio de Janeiro, 23:00 (BBC)");
         
                  }
                if ("Iran v Nigeria".equals(box)){
         
-                 textArea1.append("16 June 2014, Arena da Baixada, Curitiba, 20:00 (BBC)");
+                 textArea1.setText("16 June 2014, Arena da Baixada, Curitiba, 20:00 (BBC)");
         
                  }
                 if ("Argentina v Iran".equals(box)){
         
-                 textArea1.append("21 June 2014, Estadio Mineirao, Belo Horizonte, 17:00 (ITV)");
+                 textArea1.setText("21 June 2014, Estadio Mineirao, Belo Horizonte, 17:00 (ITV)");
         
                  }
                  if ("Nigeria v Bosnia-Hercegovina".equals(box)){
         
-                 textArea1.append("21 June 2014, Arena Pantanal, Cuiaba, 23:00 (BBC)");
+                 textArea1.setText("21 June 2014, Arena Pantanal, Cuiaba, 23:00 (BBC)");
         
                  }
                   if ("Nigeria v Argentina".equals(box)){
         
-                 textArea1.append("25 June 2014, Estadio Beira-Rio, Porto Alegre, 17:00 (ITV)");
+                 textArea1.setText("25 June 2014, Estadio Beira-Rio, Porto Alegre, 17:00 (ITV)");
         
                  }
                    if ("Bosnia-Hercegovina v Iran".equals(box)){
         
-                 textArea1.append("25 June 2014, Arena Fonte Nova, Salvador, 17:00 (ITV)");
+                 textArea1.setText("25 June 2014, Arena Fonte Nova, Salvador, 17:00 (ITV)");
         
                  }
                    //GROUP G
                    if ("Germany v Portugal".equals(box)){
         
-                 textArea1.append("16 June 2014, Arena Fonte Nova, Salvador, 17:00 (ITV)");
+                 textArea1.setText("16 June 2014, Arena Fonte Nova, Salvador, 17:00 (ITV)");
         
                  }
                    if ("Ghana v United States".equals(box)){
         
-                 textArea1.append("16 June 2014, Arena das Dunas, Natal, 23:00 (BBC)");
+                 textArea1.setText("16 June 2014, Arena das Dunas, Natal, 23:00 (BBC)");
         
                  }
                    if ("Germany v Ghana".equals(box)){
         
-                 textArea1.append("21 June 2014, Estadio Castelao, Fortaleza, 20:00 (BBC)");
+                 textArea1.setText("21 June 2014, Estadio Castelao, Fortaleza, 20:00 (BBC)");
         
                  }
                    if ("United States v Portugal".equals(box)){
         
-                 textArea1.append("22 June 2014, Arena Amazonia, Manaus, 23:00 (BBC)");
+                 textArea1.setText("22 June 2014, Arena Amazonia, Manaus, 23:00 (BBC)");
         
                  }
                    if ("United States v Germany".equals(box)){
         
-                 textArea1.append("26 June 2014, Arena Pernambuco, Recife, 17:00 (BBC)");
+                 textArea1.setText("26 June 2014, Arena Pernambuco, Recife, 17:00 (BBC)");
         
                  }
                    if ("Portugal v Ghana".equals(box)){
         
-                 textArea1.append("26 June 2014, Estadio Nacional, Brasilia, 17:00 (BBC)");
+                 textArea1.setText("26 June 2014, Estadio Nacional, Brasilia, 17:00 (BBC)");
         
                  }
                    //GROUP H
@@ -342,32 +347,32 @@ public class FixturesModule extends javax.swing.JPanel {
                    
                    if ("Belgium v Algeria".equals(box)){
         
-                 textArea1.append("17 June 2014, Estadio Mineirao, Belo Horizonte, 17:00 (ITV)");
+                 textArea1.setText("17 June 2014, Estadio Mineirao, Belo Horizonte, 17:00 (ITV)");
         
                  }
                    if ("Russia v South Korea".equals(box)){
         
-                 textArea1.append("17 June 2014, Arena Pantanal, Cuiaba, 23:00 (BBC)");
+                 textArea1.setText("17 June 2014, Arena Pantanal, Cuiaba, 23:00 (BBC)");
         
                  }
                    if ("Belgium v Russia".equals(box)){
         
-                 textArea1.append("22 June 2014, Estadio do Maracana, Rio de Janeiro, 17:00 (BBC)");
+                 textArea1.setText("22 June 2014, Estadio do Maracana, Rio de Janeiro, 17:00 (BBC)");
         
                  }
                    if ("South Korea v Algeria".equals(box)){
         
-                 textArea1.append("22 June 2014, Estadio Beira-Rio, Porto Alegre, 20:00 (ITV)");
+                 textArea1.setText("22 June 2014, Estadio Beira-Rio, Porto Alegre, 20:00 (ITV)");
         
                  }
                    if ("South Korea v Belgium".equals(box)){
         
-                 textArea1.append("26 June 2014, Arena de Sao Paulo, Sao Paulo, 21:00 (ITV)");
+                 textArea1.setText("26 June 2014, Arena de Sao Paulo, Sao Paulo, 21:00 (ITV)");
         
                  }
                    if ("Algeria v Russia".equals(box)){
         
-                 textArea1.append("26 June 2014, Arena da Baixada, Curitiba, 21:00 (ITV)");
+                 textArea1.setText("26 June 2014, Arena da Baixada, Curitiba, 21:00 (ITV)");
         
                  }
              
@@ -380,16 +385,13 @@ public class FixturesModule extends javax.swing.JPanel {
         //JOptionPane.showMessageDialog(null, "This will select list like Ireland vs. France ");
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox1ActionPerformed
- private void jComboBox1ItemStateChanged(java.awt.event.ItemEvent evt) {                                            
-        // TODO add your handling code here:
-       
-    }                                           
 
-    private void groupSelectorActionPerformed(java.awt.event.ActionEvent evt) {                                              
+    private void groupSelectorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_groupSelectorActionPerformed
         // TODO add your handling code here:
        
         Object item = groupSelector.getSelectedItem();
         String str = (String)item;
+        System.out.println(str);
         
         jComboBox1.removeAllItems();
         if ("Group A".equals(str)) {
@@ -399,7 +401,6 @@ public class FixturesModule extends javax.swing.JPanel {
             jComboBox1.addItem("Cameroon v Croatia");
             jComboBox1.addItem("Cameroon v Brazil");
             jComboBox1.addItem("Croatia v Mexico");
-            
         }
         if ("Group B".equals(str)){
             jComboBox1.addItem("Spain v Netherlands");
@@ -471,12 +472,8 @@ public class FixturesModule extends javax.swing.JPanel {
             
             
         }
-             jComboBox1.setVisible(true);
+    jComboBox1.setVisible(true);
  
-           
-             
-        
-        System.out.println(str);
         /*JOptionPane.showMessageDialog(null, "12 June 2014\n" +
     "Brazil v Croatia, Arena de Sao Paulo, Sao Paulo, 21:00 (ITV)\n" +
     "13 June 2014\n" +
@@ -488,8 +485,13 @@ public class FixturesModule extends javax.swing.JPanel {
     "23 June 2014\n" +
     "Cameroon v Brazil, Estadio Nacional, Brasilia, 21:00 (ITV)\n" +
     "23 June 2014\n" +
-    "Croatia v Mexico, Arena Pernambuco, Recife, 21:00 (ITV) ");*/
-    }                                             
+    "Croatia */
+    }//GEN-LAST:event_groupSelectorActionPerformed
+ private void jComboBox1ItemStateChanged(java.awt.event.ItemEvent evt) {                                            
+        // TODO add your handling code here:
+       
+    }                                           
+                                         
 /*public class ComboBoxDemo ... implements ActionListener {
     . . .
         petList.addActionListener(this) {

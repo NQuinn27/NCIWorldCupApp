@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<root>
+  <game>
+    <isLive>true</isLive>
+    <team1>
+      <name>Brazil</name>
+      <score>2</score>
+      <goals>
+        <goal>
+          <player>Player1</player>
+          <time>2.00</time>
+        </goal>
+        <goal>
+          <player>Player2</player>
+          <time>3.00</time>
+        </goal>
+        <goal>
+          <player>Player3</player>
+          <time>6.00</time>
+        </goal>
+      </goals>
+    </team1>
+    <team2>
+      <name>England</name>
+      <score>2</score>
+      <goals>
+        <goal>
+          <player>Player1</player>
+          <time>10.00</time>
+        </goal>
+        <goal>
+          <player>Player2</player>
+          <time>15.00</time>
+        </goal>
+        <goal>
+          <player>Player3</player>
+          <time>19.00</time>
+        </goal>
+      </goals>
+    </team2>
+  </game>
+</root>

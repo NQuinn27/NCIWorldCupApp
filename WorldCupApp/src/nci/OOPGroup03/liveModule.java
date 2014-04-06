@@ -8,9 +8,23 @@
  * 
  */
 
+/*
+Live Module:
+    Show the current status of any live game;
+    Information will be gleaned from an XML file, which will be updated on 
+    server. Ideally, i wish to create a faux-live environment by implementing 
+    a regular timer-fire method to refresh the xml stream from the server.
+*/
+
 package nci.OOPGroup03;
 
+import java.util.Iterator;
+import java.util.List;
 import javax.swing.JOptionPane;
+import org.dom4j.Document;
+import org.dom4j.DocumentException;
+import org.dom4j.Element;
+import org.dom4j.io.SAXReader;
 
 /**
  *
@@ -45,6 +59,7 @@ public class liveModule extends javax.swing.JPanel {
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
         jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(632, 432));
@@ -114,6 +129,7 @@ public class liveModule extends javax.swing.JPanel {
         jScrollPane2.setViewportView(jTextArea2);
 
         jButton1.setText("?");
+        jButton1.setActionCommand("command1");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -144,24 +160,40 @@ public class liveModule extends javax.swing.JPanel {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
+
+        jButton2.setText("Refresh");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton2)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton2)
+                .addGap(18, 18, 18)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(65, Short.MAX_VALUE))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -171,12 +203,57 @@ public class liveModule extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        JOptionPane.showMessageDialog(null, "This page will show the current score, and information about goals");
+        JOptionPane.showMessageDialog(null, "Began to implement the xml parsing, "
+                + "click refresh and check the terminal log to see the parsing "
+                + "working. Not fully implemented.");
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        this.parseXML();    
+    }//GEN-LAST:event_jButton2ActionPerformed
+    
+    private void parseXML(){
+        /*
+            Here I am parsing from an XML File,
+            using Dom4J framework. 
+            the file (test.xml) is setup so it holds info for the current game
+            On parsing from the file I will populate the fields for:
+            Teams, scores, goals scored and players who scored.
+            Running tight on time, this will be fully implemented next week.
+            This file will not be a local file, but a downloaded stream from 
+            server
+        */
+        String xmlPath = "test.xml";
+        try {
+            SAXReader reader = new SAXReader();
+            Document document = reader.read(xmlPath);
+            Element rootElement = document.getRootElement();
+            System.out.println("Root Element: "+rootElement.getName());
+            
+            for ( Iterator i = rootElement.elementIterator(); i.hasNext(); ) {
+                Element element = (Element) i.next();
+                System.out.print(element.getName());
+                
+                for ( Iterator i2 = element.elementIterator(); i2.hasNext(); ) {
+                Element element2 = (Element) i2.next();
+                
+                if (element2.getName() == "team1") {
+                    for ( Iterator i3 = element2.elementIterator(); i3.hasNext(); ) {
+                       Element innerElement = (Element) i3.next();
+                       System.out.println(element2.getName());
+                       System.out.println(element2.getStringValue());
+                    }
+                }
+                
+            }
+            }
+         } catch (DocumentException e) {
+             System.out.print(e.getMessage());
+         }}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
