@@ -48,11 +48,11 @@ public class liveModule extends javax.swing.JPanel {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        teamOneScore4 = new javax.swing.JLabel();
+        Team2Name = new javax.swing.JLabel();
         teamTwoScore = new javax.swing.JLabel();
         teamOneScore2 = new javax.swing.JLabel();
-        teamOneScore3 = new javax.swing.JLabel();
-        teamOneScore1 = new javax.swing.JLabel();
+        teamOneScore = new javax.swing.JLabel();
+        Team1Name = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
@@ -64,8 +64,8 @@ public class liveModule extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(632, 432));
 
-        teamOneScore4.setFont(new java.awt.Font("Lucida Grande", 0, 56)); // NOI18N
-        teamOneScore4.setText("Team2");
+        Team2Name.setFont(new java.awt.Font("Lucida Grande", 0, 56)); // NOI18N
+        Team2Name.setText("Team2");
 
         teamTwoScore.setFont(new java.awt.Font("Lucida Grande", 0, 72)); // NOI18N
         teamTwoScore.setText("0");
@@ -78,11 +78,11 @@ public class liveModule extends javax.swing.JPanel {
             }
         });
 
-        teamOneScore3.setFont(new java.awt.Font("Lucida Grande", 0, 72)); // NOI18N
-        teamOneScore3.setText("0");
+        teamOneScore.setFont(new java.awt.Font("Lucida Grande", 0, 72)); // NOI18N
+        teamOneScore.setText("0");
 
-        teamOneScore1.setFont(new java.awt.Font("Lucida Grande", 0, 56)); // NOI18N
-        teamOneScore1.setText("Team1");
+        Team1Name.setFont(new java.awt.Font("Lucida Grande", 0, 56)); // NOI18N
+        Team1Name.setText("Team1");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -90,30 +90,30 @@ public class liveModule extends javax.swing.JPanel {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
-                .addComponent(teamOneScore1)
+                .addComponent(Team1Name)
                 .addGap(44, 44, 44)
-                .addComponent(teamOneScore3)
+                .addComponent(teamOneScore)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(teamOneScore2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(teamTwoScore)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(teamOneScore4)
+                .addComponent(Team2Name)
                 .addGap(29, 29, 29))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(teamOneScore1)
+                .addComponent(Team1Name)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(teamTwoScore, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addComponent(teamOneScore2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(teamOneScore3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addComponent(teamOneScore, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addContainerGap())
-            .addComponent(teamOneScore4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(Team2Name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 204));
@@ -204,8 +204,7 @@ public class liveModule extends javax.swing.JPanel {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         JOptionPane.showMessageDialog(null, "Began to implement the xml parsing, "
-                + "click refresh and check the terminal log to see the parsing "
-                + "working. Not fully implemented.");
+                + "click refresh and see the Teams and scores refresh from local file");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -232,26 +231,50 @@ public class liveModule extends javax.swing.JPanel {
             
             for ( Iterator i = rootElement.elementIterator(); i.hasNext(); ) {
                 Element element = (Element) i.next();
-                System.out.print(element.getName());
+                System.out.println(element.getName());
                 
                 for ( Iterator i2 = element.elementIterator(); i2.hasNext(); ) {
                 Element element2 = (Element) i2.next();
                 
-                if (element2.getName() == "team1") {
-                    for ( Iterator i3 = element2.elementIterator(); i3.hasNext(); ) {
-                       Element innerElement = (Element) i3.next();
-                       System.out.println(element2.getName());
-                       System.out.println(element2.getStringValue());
+                    if ("isLive".equals(element2.getName())) {
+                        if ((String)element2.getData() == "false"){ 
+                            break;
+                        }
+                    }
+                    if ("team1".equals(element2.getName())) {
+                        //Node is Team 1 - parse info
+                        for (Iterator team1Iterator = element2.elementIterator(); team1Iterator.hasNext();) {
+                            Element team1 = (Element) team1Iterator.next();
+                            if ((String)team1.getName() == "name") {
+                                Team1Name.setText((String)team1.getData());
+                            }
+                            if ((String)team1.getName() == "score") {
+                                teamOneScore.setText((String)team1.getData());
+                            }
+                        }
+                    }
+                    if ("team2".equals(element2.getName())) {
+                        //Node is Team 2 - parse info
+                        for (Iterator team2Iterator = element2.elementIterator(); team2Iterator.hasNext();) {
+                            Element team2 = (Element) team2Iterator.next();
+                            if ((String)team2.getName() == "name") {
+                                Team2Name.setText((String)team2.getData());
+                            }
+                            if ((String)team2.getName() == "score") {
+                                teamTwoScore.setText((String)team2.getData());
+                            }
+                        }
                     }
                 }
-                
-            }
             }
          } catch (DocumentException e) {
              System.out.print(e.getMessage());
-         }}
+         }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Team1Name;
+    private javax.swing.JLabel Team2Name;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JPanel jPanel1;
@@ -260,10 +283,9 @@ public class liveModule extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea2;
-    private javax.swing.JLabel teamOneScore1;
+    private javax.swing.JLabel teamOneScore;
     private javax.swing.JLabel teamOneScore2;
-    private javax.swing.JLabel teamOneScore3;
-    private javax.swing.JLabel teamOneScore4;
     private javax.swing.JLabel teamTwoScore;
     // End of variables declaration//GEN-END:variables
+
 }
