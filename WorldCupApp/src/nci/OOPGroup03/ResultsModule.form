@@ -45,7 +45,7 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace pref="27" max="32767" attributes="0"/>
+              <EmptySpace pref="43" max="32767" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -108,41 +108,14 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="teamLabel" alignment="0" min="-2" pref="45" max="-2" attributes="0"/>
-                              <Component id="twoLabel" alignment="0" min="-2" pref="45" max="-2" attributes="0"/>
-                              <Component id="threeLabel" alignment="0" min="-2" pref="45" max="-2" attributes="0"/>
-                              <Component id="fourLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="oneLabel" min="-2" pref="121" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Component id="playedLabel" min="-2" pref="45" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="wonLabel" min="-2" pref="45" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="lostLabel" min="-2" pref="45" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="tiedLabel" min="-2" pref="45" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="pointsLabel" min="-2" pref="45" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="oneScore" max="32767" attributes="0"/>
-                              <Component id="twoScore" alignment="0" max="32767" attributes="0"/>
-                              <Component id="threeScore" alignment="0" max="32767" attributes="0"/>
-                              <Component id="fourScore" alignment="0" max="32767" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="groupString" min="-2" pref="59" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <EmptySpace pref="81" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="groupString" min="-2" pref="59" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+              <Group type="102" attributes="0">
+                  <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
+                  <Component id="outLable" pref="451" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -151,36 +124,9 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="groupString" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="teamLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="lostLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="playedLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="wonLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="tiedLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="pointsLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="oneLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="oneScore" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="twoLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="twoScore" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="threeLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="threeScore" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="fourLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="fourScore" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace pref="24" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="outLable" pref="180" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -191,96 +137,9 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Lucida Grande" size="13" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Group A"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="teamLabel">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Lucida Grande" size="13" style="1"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Team"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="lostLabel">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Lucida Grande" size="13" style="1"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Lost"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="wonLabel">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Lucida Grande" size="13" style="1"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Won"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="playedLabel">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Lucida Grande" size="13" style="1"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Played"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="tiedLabel">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Lucida Grande" size="13" style="1"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Tied"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="pointsLabel">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Lucida Grande" size="13" style="1"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Points"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="twoLabel">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Croatia"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="oneLabel">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Brazil"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="fourLabel">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Cameroon"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="threeLabel">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Mexico"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="oneScore">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="    1           1            0           0             1"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="twoScore">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="    1           1            0           0             1"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="threeScore">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="    1           1            0           0             1"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="fourScore">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="    1           1            0           0             1"/>
-          </Properties>
+        <Component class="javax.swing.JLabel" name="outLable">
         </Component>
       </SubComponents>
     </Container>

@@ -27,9 +27,19 @@
  *           Each methood will swapout the text in the labels (see for yourself what I mean).
  *           Changed backgrounds to white.
  * 
- * Commit 6: TODO: 1. Design the panels to display the results. 
- *                 2. Finish coding the switch statement to controll the visability of the panels.
- *                 3. Set the background image (agree on this with group).
+ * Commit 6: I agreed with the group that the data needed to be stored outside of the java application.
+ *           I decided that it will be stored in .txt files. Each group will have it's own .txt file.
+ *           The text file will contain a html table (I like html so I decided to do it this way for simplicity).
+ *           As it is now, the text files are stored in a directory called resultsTexts.
+ *           They are read in using the Scanner (called io). They will all throw exceptions if they can't find the files but as of now it's working perfectly.
+ *           Niall is using a webserver to host .xml files for his module. To keep the project together, I will test my idea (see next line) on my own webserver, but we will ultimatly aim to host everything together on his.
+ *           The idea will be to move the text files to Niall's webserver. I will then access them in a similar method used to access local .txt files.
+ *           The reason we will host such data on the web server is that it allows us update the data after the user has downloaded the application (eg. as the competition progresses).
+ *           A lot of the previous code has been removed (as the output was previously designed using jLabels and the methods A,B,C etc... did completly different things.
+ * 
+ * Commit 6: TODO: 1. Design the panels to display the results a little better. 
+ *                 2. Get the files on the webserver.
+ *                 3. Tweak the line "io=new Scanner(new File("resultsTexts/groupA.txt"));" to access a file over http rather than a local file.
  *                 4. Set the fonts (agree on this with group).
  * 
  * Commit 7: TODO: 1. Bug testing and troubleshooting.
@@ -40,6 +50,9 @@ package nci.OOPGroup03;
 
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 /**
  *
@@ -52,115 +65,100 @@ public class ResultsModule extends javax.swing.JPanel {
     public ResultsModule() {
         initComponents();
     }
+    // This Scanner will be used to read from .txt files.
+    private Scanner io;
+    // The Scanner will store the data it reads into these Strings.
+    String outA, outB, outC, outD, outE, outF, outG, outH;
+    //There is one of these methods for each group in the World Cup
+    //The methood reads the .txt file and populates the respective string.
+    //Each string is only populated when it is requested by the user.
+    //This prevents unnecissary use of memory and data retrieval accross the network
+    public void A(){
+                        //opens the file
+                        try{io=new Scanner(new File("resultsTexts/groupA.txt"));
+                        }
+                        catch(Exception e){System.out.println("Couldn't find file");
+                        }
+                        //reads the file
+                        outA = io.nextLine();
+                        //closes the file
+                        io.close();
+                        //populates the respective string
+                        outLable.setText(outA);
+                        //sets the title string
+                        groupString.setText("Group A");
+                    }
+    public void B(){
+                        try{io=new Scanner(new File("resultsTexts/groupB.txt"));
+                        }
+                        catch(Exception e){System.out.println("Couldn't find file");
+                        }
+                        outB = io.nextLine();                  
+                        io.close();
+                        outLable.setText(outB);
+                        groupString.setText("Group B");
+                    }
+    public void C(){
+                        try{io=new Scanner(new File("resultsTexts/groupC.txt"));
+                        }
+                        catch(Exception e){System.out.println("Couldn't find file");
+                        }
+                        outC = io.nextLine();                  
+                        io.close();
+                        outLable.setText(outC);
+                        groupString.setText("Group C");
+                    }
+    public void D(){
+                        try{io=new Scanner(new File("resultsTexts/groupD.txt"));
+                        }
+                        catch(Exception e){System.out.println("Couldn't find file");
+                        }
+                        outD = io.nextLine();                  
+                        io.close();
+                        outLable.setText(outD);
+                        groupString.setText("Group D");
+                    }
+    public void E(){
+                        try{io=new Scanner(new File("resultsTexts/groupE.txt"));
+                        }
+                        catch(Exception e){System.out.println("Couldn't find file");
+                        }
+                        outE = io.nextLine();                  
+                        io.close();
+                        outLable.setText(outE);
+                        groupString.setText("Group E");
+                    }
+    public void F(){
+                        try{io=new Scanner(new File("resultsTexts/groupF.txt"));
+                        }
+                        catch(Exception e){System.out.println("Couldn't find file");
+                        }
+                        outF = io.nextLine();                  
+                        io.close();
+                        outLable.setText(outF);
+                        groupString.setText("Group F");
+                    }
+    public void G(){
+                        try{io=new Scanner(new File("resultsTexts/groupG.txt"));
+                        }
+                        catch(Exception e){System.out.println("Couldn't find file");
+                        }
+                        outG = io.nextLine();                  
+                        io.close();
+                        outLable.setText(outG);
+                        groupString.setText("Group G");
+                    }
+    public void H(){
+                        try{io=new Scanner(new File("resultsTexts/groupH.txt"));
+                        }
+                        catch(Exception e){System.out.println("Couldn't find file");
+                        }
+                        outH = io.nextLine();                  
+                        io.close();
+                        outLable.setText(outH);
+                        groupString.setText("Group H");
+                    }
     
-    public void A() {oneLabel.setText("Brazil");
-                    twoLabel.setText("Croatia");
-                    threeLabel.setText("Mexico");
-                    fourLabel.setText("Cameroon");
-                    
-                    oneScore.setText("    1           1            0           0             1");
-                    twoScore.setText("    1           1            0           0             1");
-                    threeScore.setText("    1           1            0           0             1");
-                    fourScore.setText("    1           1            0           0             1");
-    
-                    groupString.setText("Group A");
-    }               
-    
-    public void B() {oneLabel.setText("Spain");
-                    twoLabel.setText("Netherlands");
-                    threeLabel.setText("Chile");
-                    fourLabel.setText("Australia");
-                    
-                    oneScore.setText("    1           1            0           0             1");
-                    twoScore.setText("    1           1            0           0             1");
-                    threeScore.setText("    1           1            0           0             1");
-                    fourScore.setText("    1           1            0           0             1");
-
-                    groupString.setText("Group B");
-    }
-    
-    public void C() {oneLabel.setText("Columbia");
-                    twoLabel.setText("Greece");
-                    threeLabel.setText("Ivory Coast");
-                    fourLabel.setText("Japan");
-                    
-                    oneScore.setText("    1           1            0           0             1");
-                    twoScore.setText("    1           1            0           0             1");
-                    threeScore.setText("    1           1            0           0             1");
-                    fourScore.setText("    1           1            0           0             1");
-
-                    groupString.setText("Group C");
-    }
-     
-    public void D() {oneLabel.setText("Uruguay");
-                    twoLabel.setText("Costa Rica");
-                    threeLabel.setText("England");
-                    fourLabel.setText("Italy");
-                    
-                    oneScore.setText("    1           1            0           0             1");
-                    twoScore.setText("    1           1            0           0             1");
-                    threeScore.setText("    1           1            0           0             1");
-                    fourScore.setText("    1           1            0           0             1");
-
-                    groupString.setText("Group D");
-    }
-    
-    public void E() {oneLabel.setText("Switzerland");
-                    twoLabel.setText("Ecuador");
-                    threeLabel.setText("France");
-                    fourLabel.setText("Honduras");
-                    
-                    oneScore.setText("    1           1            0           0             1");
-                    twoScore.setText("    1           1            0           0             1");
-                    threeScore.setText("    1           1            0           0             1");
-                    fourScore.setText("    1           1            0           0             1");
-
-                    groupString.setText("Group E");
-    }
-    
-    public void F() {oneLabel.setText("Argentina");
-                    twoLabel.setText("Bosnia");
-                    threeLabel.setText("Iran");
-                    fourLabel.setText("Nigeria");
-                    
-                    oneScore.setText("    1           1            0           0             1");
-                    twoScore.setText("    1           1            0           0             1");
-                    threeScore.setText("    1           1            0           0             1");
-                    fourScore.setText("    1           1            0           0             1");
-
-                    groupString.setText("Group F");
-    }
-    
-    public void G() {oneLabel.setText("Germany");
-                    twoLabel.setText("Portugal");
-                    threeLabel.setText("Ghana");
-                    fourLabel.setText("USA");
-                    
-                    oneScore.setText("    1           1            0           0             1");
-                    twoScore.setText("    1           1            0           0             1");
-                    threeScore.setText("    1           1            0           0             1");
-                    fourScore.setText("    1           1            0           0             1");
-
-                    groupString.setText("Group G");
-    }
-    
-    public void H() {oneLabel.setText("Belgum");
-                    twoLabel.setText("Algeria");
-                    threeLabel.setText("Russia");
-                    fourLabel.setText("Korea");
-                    
-                    oneScore.setText("    1           1            0           0             1");
-                    twoScore.setText("    1           1            0           0             1");
-                    threeScore.setText("    1           1            0           0             1");
-                    fourScore.setText("    1           1            0           0             1");
-
-                    groupString.setText("Group H");
-    }
-    /**
-     * This method is called from within the constructor to initialize the form.
-     * WARNING: Do NOT modify this code. The content of this method is always
-     * regenerated by the Form Editor.
-     */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -170,20 +168,7 @@ public class ResultsModule extends javax.swing.JPanel {
         jComboBox1 = new javax.swing.JComboBox();
         aPanel = new javax.swing.JPanel();
         groupString = new javax.swing.JLabel();
-        teamLabel = new javax.swing.JLabel();
-        lostLabel = new javax.swing.JLabel();
-        wonLabel = new javax.swing.JLabel();
-        playedLabel = new javax.swing.JLabel();
-        tiedLabel = new javax.swing.JLabel();
-        pointsLabel = new javax.swing.JLabel();
-        twoLabel = new javax.swing.JLabel();
-        oneLabel = new javax.swing.JLabel();
-        fourLabel = new javax.swing.JLabel();
-        threeLabel = new javax.swing.JLabel();
-        oneScore = new javax.swing.JLabel();
-        twoScore = new javax.swing.JLabel();
-        threeScore = new javax.swing.JLabel();
-        fourScore = new javax.swing.JLabel();
+        outLable = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -204,107 +189,28 @@ public class ResultsModule extends javax.swing.JPanel {
         aPanel.setBackground(new java.awt.Color(255, 255, 255));
 
         groupString.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
-        groupString.setText("Group A");
-
-        teamLabel.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
-        teamLabel.setText("Team");
-
-        lostLabel.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
-        lostLabel.setText("Lost");
-
-        wonLabel.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
-        wonLabel.setText("Won");
-
-        playedLabel.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
-        playedLabel.setText("Played");
-
-        tiedLabel.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
-        tiedLabel.setText("Tied");
-
-        pointsLabel.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
-        pointsLabel.setText("Points");
-
-        twoLabel.setText("Croatia");
-
-        oneLabel.setText("Brazil");
-
-        fourLabel.setText("Cameroon");
-
-        threeLabel.setText("Mexico");
-
-        oneScore.setText("    1           1            0           0             1");
-
-        twoScore.setText("    1           1            0           0             1");
-
-        threeScore.setText("    1           1            0           0             1");
-
-        fourScore.setText("    1           1            0           0             1");
 
         org.jdesktop.layout.GroupLayout aPanelLayout = new org.jdesktop.layout.GroupLayout(aPanel);
         aPanel.setLayout(aPanelLayout);
         aPanelLayout.setHorizontalGroup(
             aPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(aPanelLayout.createSequentialGroup()
-                .add(aPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(aPanelLayout.createSequentialGroup()
-                        .add(53, 53, 53)
-                        .add(aPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(teamLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 45, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(twoLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 45, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(threeLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 45, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(fourLabel)
-                            .add(oneLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 121, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(aPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                            .add(aPanelLayout.createSequentialGroup()
-                                .add(playedLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 45, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                                .add(wonLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 45, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                                .add(lostLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 45, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                                .add(tiedLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 45, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                                .add(pointsLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 45, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                            .add(oneScore, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .add(twoScore, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .add(threeScore, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .add(fourScore, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .add(aPanelLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .add(groupString, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 59, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(81, Short.MAX_VALUE))
+                .addContainerGap()
+                .add(groupString, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 59, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .add(aPanelLayout.createSequentialGroup()
+                .add(71, 71, 71)
+                .add(outLable, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 451, Short.MAX_VALUE)
+                .addContainerGap())
         );
         aPanelLayout.setVerticalGroup(
             aPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(aPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .add(groupString)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                .add(aPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(teamLabel)
-                    .add(lostLabel)
-                    .add(playedLabel)
-                    .add(wonLabel)
-                    .add(tiedLabel)
-                    .add(pointsLabel))
-                .add(40, 40, 40)
-                .add(aPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(oneLabel)
-                    .add(oneScore))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                .add(aPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(twoLabel)
-                    .add(twoScore))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                .add(aPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(threeLabel)
-                    .add(threeScore))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                .add(aPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(fourLabel)
-                    .add(fourScore))
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(outLable, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(this);
@@ -329,7 +235,7 @@ public class ResultsModule extends javax.swing.JPanel {
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(layout.createSequentialGroup()
-                .addContainerGap(27, Short.MAX_VALUE)
+                .addContainerGap(43, Short.MAX_VALUE)
                 .add(jLabel1)
                 .add(18, 18, 18)
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
@@ -345,47 +251,36 @@ public class ResultsModule extends javax.swing.JPanel {
         //Line 217 (commeneted out) is just for testing (breakpoint 1)
         // jTextField1.setText("Results for Group " + jComboBox1.getSelectedItem().toString());
        String select = (String) jComboBox1.getSelectedItem();
-
        
-       
+            
+                
        //NOTE! This will be changed to a 'switch' statement once I am happy everything else in the module is working as intended
        // This selection will toggle the visability of the respective JTextArea to visable = true and toggle the other 5 text areas to visable = false    
        if (select == "A") {System.out.println("Test A successful");
                            A();}
        else if (select == "B") {System.out.println("Test B successful");
-                                B();}
+                               B();}
        else if (select == "C") {System.out.println("Test C successful");
-                                C();}
+                               C();}
        else if (select == "D") {System.out.println("Test D successful");
-                                D();}
+                               D();}
        else if (select == "E") {System.out.println("Test E successful");
-                                E();}
+                               E();}
        else if (select == "F") {System.out.println("Test F successful");
-                                F();}
+                               F();}
        else if (select == "G") {System.out.println("Test G successful");
-                               G(); }
+                               G();}
+       else if (select == "H") {System.out.println("Test H successful");
+                               H();}
        else {System.out.println("Oops! Something went wrong in ResultsModule (breakpoint 2)");}
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel aPanel;
-    private javax.swing.JLabel fourLabel;
-    private javax.swing.JLabel fourScore;
     private javax.swing.JLabel groupString;
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel lostLabel;
-    private javax.swing.JLabel oneLabel;
-    private javax.swing.JLabel oneScore;
-    private javax.swing.JLabel playedLabel;
-    private javax.swing.JLabel pointsLabel;
-    private javax.swing.JLabel teamLabel;
-    private javax.swing.JLabel threeLabel;
-    private javax.swing.JLabel threeScore;
-    private javax.swing.JLabel tiedLabel;
-    private javax.swing.JLabel twoLabel;
-    private javax.swing.JLabel twoScore;
-    private javax.swing.JLabel wonLabel;
+    private javax.swing.JLabel outLable;
     // End of variables declaration//GEN-END:variables
 }
