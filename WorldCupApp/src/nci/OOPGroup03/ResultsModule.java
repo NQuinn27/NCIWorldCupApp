@@ -5,6 +5,8 @@
  * @johnoshea x13104977
  * 
  * PROGRESS LOG:
+ * NOTE: I changed my methods a lot during the project, and I mean A LOT.
+ *       So part of the progress log may not make sense until you read the full thing. (ie. it references bits of code that I've replaced).
  * 
  * Commit 1: Basic layout was established. The main Panels dimensions were agreed upon by the group. 
  *           I'm going to controll the module with a single jComboBox.
@@ -37,21 +39,21 @@
  *           The reason we will host such data on the web server is that it allows us update the data after the user has downloaded the application (eg. as the competition progresses).
  *           A lot of the previous code has been removed (as the output was previously designed using jLabels and the methods A,B,C etc... did completly different things.
  * 
- * Commit 6: TODO: 1. Design the panels to display the results a little better. 
- *                 2. Get the files on the webserver.
- *                 3. Tweak the line "io=new Scanner(new File("resultsTexts/groupA.txt"));" to access a file over http rather than a local file.
- *                 4. Set the fonts (agree on this with group).
+ * Commit 7: The files were uploaded to the webserver.
+ *           The url to each file will be created as a URL type object.
+ *           The Buffered Reader will then read the stream from the URL.
+ *           This will be stored in the respective string.
+ *           The string will be plugged into the jLabel similarly to how it was when we were using local files. (see the previous commit).          
  * 
- * Commit 7: TODO: 1. Bug testing and troubleshooting.
+ * Commit 8: TODO: 1. Bug testing and troubleshooting.
  *                 2. Any last font or design changes (agree w/ group).
  *                 3. Bug test entire project (do this as a group).
  */
 package nci.OOPGroup03;
 
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.URL;
 import java.util.Scanner;
 
 /**
@@ -64,99 +66,147 @@ public class ResultsModule extends javax.swing.JPanel {
      
     public ResultsModule() {
         initComponents();
+        
     }
+    
     // This Scanner will be used to read from .txt files.
     private Scanner io;
     // The Scanner will store the data it reads into these Strings.
+    private BufferedReader in;
     String outA, outB, outC, outD, outE, outF, outG, outH;
     //There is one of these methods for each group in the World Cup
     //The methood reads the .txt file and populates the respective string.
     //Each string is only populated when it is requested by the user.
     //This prevents unnecissary use of memory and data retrieval accross the network
-    public void A(){
-                        //opens the file
-                        try{io=new Scanner(new File("resultsTexts/groupA.txt"));
-                        }
-                        catch(Exception e){System.out.println("Couldn't find file");
-                        }
-                        //reads the file
-                        outA = io.nextLine();
-                        //closes the file
-                        io.close();
-                        //populates the respective string
-                        outLable.setText(outA);
-                        //sets the title string
-                        groupString.setText("Group A");
+  
+                    
+    public void A(){try
+                    //Create URL object
+                    {URL urla = new URL("http://nci.niallquinn.me/worldcupapp/results/groupA.txt");
+                    //Point the BufferedReader to the URL object
+                    in = new BufferedReader(new InputStreamReader(urla.openStream()));
+                    //Read the URL object and plug the contents into a local string
+                    outA = in.readLine();
+                    //Plug that string into the main display lable
+                    outLable.setText(outA);
+                     }
+                    //In case of errors with the server
+                    catch(Exception e){System.out.println("Sorry, but the server seems to be down, try again later");
                     }
-    public void B(){
-                        try{io=new Scanner(new File("resultsTexts/groupB.txt"));
-                        }
-                        catch(Exception e){System.out.println("Couldn't find file");
-                        }
-                        outB = io.nextLine();                  
-                        io.close();
-                        outLable.setText(outB);
-                        groupString.setText("Group B");
+                    //Set the lable string
+                    groupString.setText("Group A");
                     }
-    public void C(){
-                        try{io=new Scanner(new File("resultsTexts/groupC.txt"));
-                        }
-                        catch(Exception e){System.out.println("Couldn't find file");
-                        }
-                        outC = io.nextLine();                  
-                        io.close();
-                        outLable.setText(outC);
-                        groupString.setText("Group C");
+    public void B(){try
+                    //Create URL object
+                    {URL urlb = new URL("http://nci.niallquinn.me/worldcupapp/results/groupB.txt");
+                    //Point the BufferedReader to the URL object
+                    in = new BufferedReader(new InputStreamReader(urlb.openStream()));
+                    //Read the URL object and plug the contents into a local string
+                    outB = in.readLine();
+                    //Plug that string into the main display lable
+                    outLable.setText(outB);
+                     }
+                    //In case of errors with the server
+                    catch(Exception e){System.out.println("Sorry, but the server seems to be down, try again later");
                     }
-    public void D(){
-                        try{io=new Scanner(new File("resultsTexts/groupD.txt"));
-                        }
-                        catch(Exception e){System.out.println("Couldn't find file");
-                        }
-                        outD = io.nextLine();                  
-                        io.close();
-                        outLable.setText(outD);
-                        groupString.setText("Group D");
+                    //Set the lable string
+                    groupString.setText("Group B");
                     }
-    public void E(){
-                        try{io=new Scanner(new File("resultsTexts/groupE.txt"));
-                        }
-                        catch(Exception e){System.out.println("Couldn't find file");
-                        }
-                        outE = io.nextLine();                  
-                        io.close();
-                        outLable.setText(outE);
-                        groupString.setText("Group E");
+    public void C(){try
+                    //Create URL object
+                    {URL urlc = new URL("http://nci.niallquinn.me/worldcupapp/results/groupC.txt");
+                    //Point the BufferedReader to the URL object
+                    in = new BufferedReader(new InputStreamReader(urlc.openStream()));
+                    //Read the URL object and plug the contents into a local string
+                    outC = in.readLine();
+                    //Plug that string into the main display lable
+                    outLable.setText(outC);
+                     }
+                    //In case of errors with the server
+                    catch(Exception e){System.out.println("Sorry, but the server seems to be down, try again later");
                     }
-    public void F(){
-                        try{io=new Scanner(new File("resultsTexts/groupF.txt"));
-                        }
-                        catch(Exception e){System.out.println("Couldn't find file");
-                        }
-                        outF = io.nextLine();                  
-                        io.close();
-                        outLable.setText(outF);
-                        groupString.setText("Group F");
+                    //Set the lable string
+                    groupString.setText("Group C");
                     }
-    public void G(){
-                        try{io=new Scanner(new File("resultsTexts/groupG.txt"));
-                        }
-                        catch(Exception e){System.out.println("Couldn't find file");
-                        }
-                        outG = io.nextLine();                  
-                        io.close();
-                        outLable.setText(outG);
-                        groupString.setText("Group G");
+    public void D(){try
+                    //Create URL object
+                    {URL urld = new URL("http://nci.niallquinn.me/worldcupapp/results/groupD.txt");
+                    //Point the BufferedReader to the URL object
+                    in = new BufferedReader(new InputStreamReader(urld.openStream()));
+                    //Read the URL object and plug the contents into a local string
+                    outD = in.readLine();
+                    //Plug that string into the main display lable
+                    outLable.setText(outD);
+                     }
+                    //In case of errors with the server
+                    catch(Exception e){System.out.println("Sorry, but the server seems to be down, try again later");
                     }
-    public void H(){
-                        try{io=new Scanner(new File("resultsTexts/groupH.txt"));
-                        }
-                        catch(Exception e){System.out.println("Couldn't find file");
-                        }
-                        outH = io.nextLine();                  
-                        io.close();
-                        outLable.setText(outH);
-                        groupString.setText("Group H");
+                    //Set the lable string
+                    groupString.setText("Group D");
+                    }
+    public void E(){try
+                    //Create URL object
+                    {URL urle = new URL("http://nci.niallquinn.me/worldcupapp/results/groupE.txt");
+                    //Point the BufferedReader to the URL object
+                    in = new BufferedReader(new InputStreamReader(urle.openStream()));
+                    //Read the URL object and plug the contents into a local string
+                    outE = in.readLine();
+                    //Plug that string into the main display lable
+                    outLable.setText(outE);
+                     }
+                    //In case of errors with the server
+                    catch(Exception e){System.out.println("Sorry, but the server seems to be down, try again later");
+                    }
+                    //Set the lable string
+                    groupString.setText("Group E");
+                    }
+    public void F(){try
+                    //Create URL object
+                    {URL urlf = new URL("http://nci.niallquinn.me/worldcupapp/results/groupF.txt");
+                    //Point the BufferedReader to the URL object
+                    in = new BufferedReader(new InputStreamReader(urlf.openStream()));
+                    //Read the URL object and plug the contents into a local string
+                    outF = in.readLine();
+                    //Plug that string into the main display lable
+                    outLable.setText(outF);
+                     }
+                    //In case of errors with the server
+                    catch(Exception e){System.out.println("Sorry, but the server seems to be down, try again later");
+                    }
+                    //Set the lable string
+                    groupString.setText("Group F");
+                    }
+    public void G(){try
+                    //Create URL object
+                    {URL urlg = new URL("http://nci.niallquinn.me/worldcupapp/results/groupG.txt");
+                    //Point the BufferedReader to the URL object
+                    in = new BufferedReader(new InputStreamReader(urlg.openStream()));
+                    //Read the URL object and plug the contents into a local string
+                    outG = in.readLine();
+                    //Plug that string into the main display lable
+                    outLable.setText(outG);
+                     }
+                    //In case of errors with the server
+                    catch(Exception e){System.out.println("Sorry, but the server seems to be down, try again later");
+                    }
+                    //Set the lable string
+                    groupString.setText("Group G");
+                    }
+    public void H(){try
+                    //Create URL object
+                    {URL urlh = new URL("http://nci.niallquinn.me/worldcupapp/results/groupH.txt");
+                    //Point the BufferedReader to the URL object
+                    in = new BufferedReader(new InputStreamReader(urlh.openStream()));
+                    //Read the URL object and plug the contents into a local string
+                    outH = in.readLine();
+                    //Plug that string into the main display lable
+                    outLable.setText(outH);
+                     }
+                    //In case of errors with the server
+                    catch(Exception e){System.out.println("Sorry, but the server seems to be down, try again later");
+                    }
+                    //Set the lable string
+                    groupString.setText("Group H");
                     }
     
     @SuppressWarnings("unchecked")
@@ -248,12 +298,8 @@ public class ResultsModule extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        //Line 217 (commeneted out) is just for testing (breakpoint 1)
-        // jTextField1.setText("Results for Group " + jComboBox1.getSelectedItem().toString());
-       String select = (String) jComboBox1.getSelectedItem();
-       
-            
-                
+       //Store the users selection into String select
+        String select = (String) jComboBox1.getSelectedItem();         
        //NOTE! This will be changed to a 'switch' statement once I am happy everything else in the module is working as intended
        // This selection will toggle the visability of the respective JTextArea to visable = true and toggle the other 5 text areas to visable = false    
        if (select == "A") {System.out.println("Test A successful");
