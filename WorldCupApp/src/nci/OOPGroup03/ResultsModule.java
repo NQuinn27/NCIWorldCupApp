@@ -240,6 +240,8 @@ public class ResultsModule extends javax.swing.JPanel {
 
         groupString.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
 
+        outLable.setBackground(new java.awt.Color(255, 255, 255));
+
         org.jdesktop.layout.GroupLayout aPanelLayout = new org.jdesktop.layout.GroupLayout(aPanel);
         aPanel.setLayout(aPanelLayout);
         aPanelLayout.setHorizontalGroup(
@@ -247,9 +249,7 @@ public class ResultsModule extends javax.swing.JPanel {
             .add(aPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .add(groupString, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 59, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .add(aPanelLayout.createSequentialGroup()
-                .add(71, 71, 71)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(outLable, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 451, Short.MAX_VALUE)
                 .addContainerGap())
         );
@@ -258,8 +258,10 @@ public class ResultsModule extends javax.swing.JPanel {
             .add(aPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .add(groupString)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(outLable, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .add(org.jdesktop.layout.GroupLayout.TRAILING, aPanelLayout.createSequentialGroup()
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .add(outLable, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 207, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -285,7 +287,7 @@ public class ResultsModule extends javax.swing.JPanel {
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(layout.createSequentialGroup()
-                .addContainerGap(43, Short.MAX_VALUE)
+                .addContainerGap(22, Short.MAX_VALUE)
                 .add(jLabel1)
                 .add(18, 18, 18)
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)

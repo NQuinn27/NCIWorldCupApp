@@ -5,9 +5,19 @@ NCIWorldCupApp
 
 #####Contributors:  
 * **Niall Quinn** - @NQuinn27  
-* **Jonathan James Turner** - @
-* **James Walsh** - @itsjt
-* **John O'Shea** - @colmiscool
+* **Jonathan James Turner** - @itsjt
+* **James Walsh** - @
+* **John O'Shea** - @johnoshea (colmiscool)
+
+### Attendence	
+	Meeting		1	2 	3 	4	5 	6 	7 	
+	Niall		
+	Jonathan
+	James
+	John 		p 	p	p 	p	p 	p	p
+
+	Legend: p = present, aex = absent (excused by group members), aoe = absent (offically excused by NCI / exceptional circumstances), abs = absent (no excuse).
+
 
 --------------------------
 ###Project Brief
