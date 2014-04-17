@@ -12,7 +12,7 @@ NCIWorldCupApp
 ### Attendence	
 *	Meeting		1	2 	3 	4	5 	6 	7 
 *	--------------------------------------	
-*	Niall		
+*	Niall		p   aex p   p   pv  p
 *	Jonathan	p 	p 	p 	p 	p 	pv	
 *	James		p 	p 	p 	p 	pv 	pv 	
 *	John 		* 	p	p 	p	p 	p	

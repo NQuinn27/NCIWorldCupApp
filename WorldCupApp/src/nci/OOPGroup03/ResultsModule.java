@@ -54,10 +54,8 @@ package nci.OOPGroup03;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
-import java.util.Scanner;
 
 /**
- *
  * @author johnoshea
  */
 public class ResultsModule extends javax.swing.JPanel {
@@ -69,17 +67,15 @@ public class ResultsModule extends javax.swing.JPanel {
         
     }
     
-    // This Scanner will be used to read from .txt files.
-    private Scanner io;
-    // The Scanner will store the data it reads into these Strings.
+    //This buffer will be used to read the txt files stored on the webserver
     private BufferedReader in;
+    //It will put results into these variables
     String outA, outB, outC, outD, outE, outF, outG, outH;
+    
     //There is one of these methods for each group in the World Cup
     //The methood reads the .txt file and populates the respective string.
     //Each string is only populated when it is requested by the user.
-    //This prevents unnecissary use of memory and data retrieval accross the network
-  
-                    
+    //This prevents unnecissary use of memory and data retrieval accross the network                
     public void A(){try
                     //Create URL object
                     {URL urla = new URL("http://nci.niallquinn.me/worldcupapp/results/groupA.txt");
@@ -320,7 +316,7 @@ public class ResultsModule extends javax.swing.JPanel {
                                G();}
        else if (select == "H") {System.out.println("Test H successful");
                                H();}
-       else {System.out.println("Oops! Something went wrong in ResultsModule (breakpoint 2)");}
+       else {System.out.println("Oops! Something went wrong in ResultsModule");}
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
