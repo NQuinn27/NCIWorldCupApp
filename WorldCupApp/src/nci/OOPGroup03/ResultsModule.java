@@ -1,8 +1,13 @@
 /*
+ * WorldCupApp
+ * resultsModule.java
+ * 
  * This module will display the results of played matches for the FIFA world cup 2014
  * It will be controlled by a varible called select which the user sets using the jComboBox.
- * This will toggle the visability of 8 jPanels (one for each group) so the respective panel is visable
- * @johnoshea x13104977
+ * This will control which of the 8 .txt files to be read in from Nialls webserver.
+ * Each .txt file will have a string of HTML that will construct a table on the outout jPannel.
+ * 
+ * Created by @johnoshea x13104977
  * 
  * PROGRESS LOG:
  * NOTE: I changed my methods a lot during the project, and I mean A LOT.
@@ -48,6 +53,12 @@
  * Commit 8: TODO: 1. Bug testing and troubleshooting.
  *                 2. Any last font or design changes (agree w/ group).
  *                 3. Bug test entire project (do this as a group).
+ * 
+ * Commit 9: TODO:  Chances are I won't get around to doing this, but I'd like to add a loading bar to the module.
+ *                  This bar would be based on the size of the .txt file as it's loaded in from the webserver.
+ *                  It's really not necissary as the files we're loading in are text strings (couple of bytes each).
+ *                  It might just look nice though, and would provide some minorly useful information (eg. if a .txt file has been corupted from a certian point onwards etc...)
+ *                  
  */
 package nci.OOPGroup03;
 
@@ -69,13 +80,13 @@ public class ResultsModule extends javax.swing.JPanel {
     
     //This buffer will be used to read the txt files stored on the webserver
     private BufferedReader in;
-    //It will put results into these variables
+    //It will put results into these variables of type String
     String outA, outB, outC, outD, outE, outF, outG, outH;
     
     //There is one of these methods for each group in the World Cup
     //The methood reads the .txt file and populates the respective string.
     //Each string is only populated when it is requested by the user.
-    //This prevents unnecissary use of memory and data retrieval accross the network                
+    //This prevents unnecissary use of local memory and data retrieval accross the network                
     public void A(){try
                     //Create URL object
                     {URL urla = new URL("http://nci.niallquinn.me/worldcupapp/results/groupA.txt");
@@ -205,6 +216,13 @@ public class ResultsModule extends javax.swing.JPanel {
                     groupString.setText("Group H");
                     }
     
+    //NOTE: I realise I could have only created one single URL object in a seperate method.
+    //      Doing so would reduce the ammount of code, but...
+    //      Remember how the entire application works, every module (teams, fixtures, results and live) are created when the application runs
+    //      That means that the object would be created too, even if the usere was never going to use the results module.
+    //      This would be (minorly) wasteful on computers resources
+    //      In practice, it would make no difference, but I'm just being picky!
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -298,25 +316,47 @@ public class ResultsModule extends javax.swing.JPanel {
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
        //Store the users selection into String select
         String select = (String) jComboBox1.getSelectedItem();         
-       //NOTE! This will be changed to a 'switch' statement once I am happy everything else in the module is working as intended
-       // This selection will toggle the visability of the respective JTextArea to visable = true and toggle the other 5 text areas to visable = false    
-       if (select == "A") {System.out.println("Test A successful");
-                           A();}
-       else if (select == "B") {System.out.println("Test B successful");
-                               B();}
-       else if (select == "C") {System.out.println("Test C successful");
-                               C();}
-       else if (select == "D") {System.out.println("Test D successful");
-                               D();}
-       else if (select == "E") {System.out.println("Test E successful");
-                               E();}
-       else if (select == "F") {System.out.println("Test F successful");
-                               F();}
-       else if (select == "G") {System.out.println("Test G successful");
-                               G();}
-       else if (select == "H") {System.out.println("Test H successful");
-                               H();}
-       else {System.out.println("Oops! Something went wrong in ResultsModule");}
+        // This switch selection will toggle which .txt file is being read in by calling the respective methood. ie. if select == A we call method A();
+        // We're also printing out messages to the consol as a lot can go wrong here. If there is a problem accessing the URL, the method will catch the error itself. 
+        // If there is a problem finding the string (select == null), we will get the default case which prints a different messege to the console
+        // This will make it easier to localise bugs in the code if something starts to go wrong
+        switch (select) {
+            case "A":
+                System.out.println("Test A successful");
+                A();
+                break;
+            case "B":
+                System.out.println("Test B successful");
+                B();
+                break;
+            case "C":
+                System.out.println("Test C successful");
+                C();
+                break;
+            case "D":
+                System.out.println("Test D successful");
+                D();
+                break;
+            case "E":
+                System.out.println("Test E successful");
+                E();
+                break;
+            case "F":
+                System.out.println("Test F successful");
+                F();
+                break;
+            case "G":
+                System.out.println("Test G successful");
+                G();
+                break;
+            case "H":
+                System.out.println("Test H successful");
+                H();
+                break;
+            default:
+                System.out.println("Oops! Something went wrong in ResultsModule");
+                break;
+        }
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

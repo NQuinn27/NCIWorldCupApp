@@ -9,7 +9,7 @@
  */
 
 package nci.OOPGroup03;
-
+//I want to remove these imports so badly but feel it would be rude to do so (Since Niall coded them). Much OCD! 
 import java.awt.Button;
 import javax.swing.JButton;
 import javax.swing.JToggleButton;
@@ -175,12 +175,14 @@ public class MainWindow extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     public void initPanelsArray() {
+        //Create an array of four pannels on the main jFrame
         panelsArray = new javax.swing.JPanel[4];
     }
     
         
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        // When this button is clicked, we want all but the teams window (pannel 3) to be hidden.
         setAllVisibilityToFalse();
         panelsArray[3].setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -196,6 +198,7 @@ public class MainWindow extends javax.swing.JFrame {
     }
     
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // When this button is clicked, we want all but the fixtures window (pannel 2) to be hidden.
         // TODO add your handling code here:
         setAllVisibilityToFalse();
         panelsArray[2].setVisible(true);
@@ -203,13 +206,14 @@ public class MainWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-         
+        // When this button is clicked, we want all but the results window (pannel 1) to be hidden.
         setAllVisibilityToFalse();
         panelsArray[1].setVisible(true);
         
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // When this button is clicked, we want all but the live window (pannel 0) to be hidden.
         // TODO add your handling code here:
         setAllVisibilityToFalse();
         panelsArray[0].setVisible(true);
@@ -218,6 +222,7 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
+        //When this button is clicked, all 4 pannels will be hidden, displaing the home page (photo)
         setAllVisibilityToFalse();
         jPanel2.setVisible(true);
     }//GEN-LAST:event_jButton5ActionPerformed
