@@ -22,14 +22,13 @@ public class FixturesModule extends javax.swing.JPanel {
     public FixturesModule() {
         initComponents();
         
-    jComboBox1.setVisible(false);
-        textArea1.setVisible(false);
+         jComboBox1.setVisible(false);
+        jLabel3.setVisible(false);
+         textArea1.setVisible(false);
        // setEditable(false);
     }
     public void Hide() {
         jComboBox1.setVisible(false);
-        
-       
     }
 
     /**
@@ -48,7 +47,7 @@ public class FixturesModule extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         groupSelector = new javax.swing.JComboBox();
 
-        setBackground(new java.awt.Color(102, 255, 0));
+        setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(633, 419));
         setRequestFocusEnabled(false);
 
@@ -392,7 +391,7 @@ public class FixturesModule extends javax.swing.JPanel {
         Object item = groupSelector.getSelectedItem();
         String str = (String)item;
         System.out.println(str);
-        
+        jLabel3.setVisible(true);
         jComboBox1.removeAllItems();
         if ("Group A".equals(str)) {
             jComboBox1.addItem("Brazil v Croatia");
@@ -472,6 +471,7 @@ public class FixturesModule extends javax.swing.JPanel {
             
             
         }
+        
     jComboBox1.setVisible(true);
  
         /*JOptionPane.showMessageDialog(null, "12 June 2014\n" +

@@ -9,10 +9,13 @@
  */
 
 package nci.OOPGroup03;
-//I want to remove these imports so badly but feel it would be rude to do so (Since Niall coded them). Much OCD! 
-import java.awt.Button;
-import javax.swing.JButton;
-import javax.swing.JToggleButton;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 /**
  *
@@ -100,7 +103,7 @@ public class MainWindow extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jButton5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -127,14 +130,13 @@ public class MainWindow extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nci/OOPGroup03/resources/world-cup-logo-2014.jpg"))); // NOI18N
 
         userLabel.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
-        userLabel.setText("Hello");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(88, Short.MAX_VALUE)
+                .addContainerGap(89, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 459, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(84, 84, 84))
             .addGroup(jPanel2Layout.createSequentialGroup()
@@ -158,7 +160,7 @@ public class MainWindow extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -168,21 +170,21 @@ public class MainWindow extends javax.swing.JFrame {
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 38, Short.MAX_VALUE)))
+                    .addGap(0, 61, Short.MAX_VALUE)))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     public void initPanelsArray() {
-        //Create an array of four pannels on the main jFrame
+        //Create an array of four panels on the main jFrame
         panelsArray = new javax.swing.JPanel[4];
     }
     
         
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        // When this button is clicked, we want all but the teams window (pannel 3) to be hidden.
+        // When this button is clicked, we want all but the teams window (panel 3) to be hidden.
         setAllVisibilityToFalse();
         panelsArray[3].setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -198,7 +200,7 @@ public class MainWindow extends javax.swing.JFrame {
     }
     
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // When this button is clicked, we want all but the fixtures window (pannel 2) to be hidden.
+        // When this button is clicked, we want all but the fixtures window (panel 2) to be hidden.
         // TODO add your handling code here:
         setAllVisibilityToFalse();
         panelsArray[2].setVisible(true);
@@ -206,14 +208,14 @@ public class MainWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // When this button is clicked, we want all but the results window (pannel 1) to be hidden.
+        // When this button is clicked, we want all but the results window (panel 1) to be hidden.
         setAllVisibilityToFalse();
         panelsArray[1].setVisible(true);
         
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // When this button is clicked, we want all but the live window (pannel 0) to be hidden.
+        // When this button is clicked, we want all but the live window (panel 0) to be hidden.
         // TODO add your handling code here:
         setAllVisibilityToFalse();
         panelsArray[0].setVisible(true);
@@ -222,7 +224,7 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
-        //When this button is clicked, all 4 pannels will be hidden, displaing the home page (photo)
+        //When this button is clicked, all 4 panels will be hidden, displaing the home page (photo)
         setAllVisibilityToFalse();
         jPanel2.setVisible(true);
     }//GEN-LAST:event_jButton5ActionPerformed
@@ -265,6 +267,45 @@ public class MainWindow extends javax.swing.JFrame {
     public void setUserLabelString(String string){
         userLabel.setText(string);
     }
+    
+    public void loadUser() {
+        /*
+            Attempt to load a user from the file users.wca
+            If file not found, create a new user and write to file
+            NOTE: this will fire a method to take user details from the user
+            in future builds.
+        */
+        
+        String userName = "";
+        WCUser user;
+        try {
+            FileInputStream in = new FileInputStream("users.wca");
+            ObjectInputStream ois = new ObjectInputStream(in);
+            user= (WCUser) (ois.readObject());
+            System.out.println("User " + user.userName + " found!");
+            userLabel.setText("Hello, " + user.userName);
+        } catch (IOException | ClassNotFoundException e) {
+      //No user?
+        //Ask user to supply their name.
+            System.out.println("User not found, creating a new one");
+            
+            String username = JOptionPane.showInputDialog("Please enter your name:");
+            this.createNewUser(username);
+        }
+    }   
+    
+    public static void createNewUser(String userName) {
+        WCUser user = new WCUser(userName);
+            try {
+                FileOutputStream out = new FileOutputStream("users.wca");
+                ObjectOutputStream oos = new ObjectOutputStream(out);
+                oos.writeObject(user);
+                oos.flush();
+                userLabel.setText("Hello, " + user.userName);
+            } catch (IOException ex) {
+                System.out.println("Problem serializing: " + ex);
+            }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
@@ -276,7 +317,7 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JLabel userLabel;
+    private static javax.swing.JLabel userLabel;
     // End of variables declaration//GEN-END:variables
 
 }

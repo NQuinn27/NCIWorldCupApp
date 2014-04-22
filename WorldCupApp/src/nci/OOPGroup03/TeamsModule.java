@@ -78,6 +78,8 @@ public class TeamsModule extends javax.swing.JPanel {
 
         jToggleButton9.setText("jToggleButton9");
 
+        setBackground(new java.awt.Color(255, 255, 255));
+
         jLabel1.setText("GROUP A");
 
         jToggleButton3.setText("BRAZIL");

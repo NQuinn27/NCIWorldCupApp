@@ -15,6 +15,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 /**
  *
@@ -62,40 +64,7 @@ public class MainController {
         mainGui.panelsArray[3] = teams;
         teams.setVisible(false);
         
-        mainGui.setUserLabelString("Hello, "+ loadUser());
+        mainGui.loadUser();
         
     }
-    
-    static String loadUser() {
-        /*
-            Attempt to load a user from the file users.wca
-            If file not found, create a new user and write to file
-            NOTE: this will fire a method to take user details from the user
-            in future builds.
-        */
-        
-        String userName = "";
-        WCUser user;
-        try {
-            FileInputStream in = new FileInputStream("users.wca");
-            ObjectInputStream ois = new ObjectInputStream(in);
-            user= (WCUser) (ois.readObject());
-            System.out.println("User " + user.userName + " found!");
-        } catch (IOException | ClassNotFoundException e) {
-      //No user?
-        //Make a new one
-            System.out.println("User not found, creating a new one");
-            user = new WCUser("USERNAME");
-            try {
-                FileOutputStream out = new FileOutputStream("users.wca");
-                ObjectOutputStream oos = new ObjectOutputStream(out);
-                oos.writeObject(user);
-                oos.flush();
-            } catch (IOException ex) {
-                System.out.println("Problem serializing: " + e);
-                return "";
-            }
-        }
-        return user.userName;
-    }   
 }
